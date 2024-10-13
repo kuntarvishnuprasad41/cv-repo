@@ -207,7 +207,7 @@ export const RESUME_DATA = {
       logo: EvercastLogo,
       link: {
         label: "Dealers Nayaks.biz",
-        href: "https://dealers.nayaks.biz/",
+        href: "https://dealer.nayaks.biz/",
       },
     },
   ],
