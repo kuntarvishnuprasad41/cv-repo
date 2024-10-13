@@ -202,11 +202,12 @@ export const RESUME_DATA = {
     {
       title: "Nayaks.Biz | Dealers Custom web app",
       techStack: ["Developer", "Php", "CodeIgniter", "mySQL"],
-      description: "Custom Web app to manage the clients and the amount og ",
+      description:
+        "Custom Web app to manage the clients and the slabs on the amount of purchases - B2B ",
       logo: EvercastLogo,
       link: {
-        label: "Safa",
-        href: "https://nayaks.biz/",
+        label: "Dealers Nayaks.biz",
+        href: "https://dealers.nayaks.biz/",
       },
     },
   ],
