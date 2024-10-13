@@ -188,5 +188,26 @@ export const RESUME_DATA = {
         href: "https://web.archive.org/web/20240425041954/https://safaglobaltech.com/",
       },
     },
+    {
+      title: "Nayaks.Biz.",
+      techStack: ["Lead Frontend Developer", "Wordpress", "Elementor", "Php"],
+      description:
+        "Website for the company with CMS, With custom themes and plugins",
+      logo: EvercastLogo,
+      link: {
+        label: "Nayaks.biz",
+        href: "https://nayaks.biz/",
+      },
+    },
+    {
+      title: "Nayaks.Biz | Dealers Custom web app",
+      techStack: ["Developer", "Php", "CodeIgniter", "mySQL"],
+      description: "Custom Web app to manage the clients and the amount og ",
+      logo: EvercastLogo,
+      link: {
+        label: "Safa",
+        href: "https://nayaks.biz/",
+      },
+    },
   ],
 } as const;
