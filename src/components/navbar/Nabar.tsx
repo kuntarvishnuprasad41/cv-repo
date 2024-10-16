@@ -14,7 +14,9 @@ export function HomeNav() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className={cn(" fixed  top-10 z-50 mx-auto max-w-md", className)}>
+    <div
+      className={cn(" fixed top-10 z-50 mx-auto  mb-24 max-w-md  ", className)}
+    >
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
