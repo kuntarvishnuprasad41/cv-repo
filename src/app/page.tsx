@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto mt-6 w-full max-w-3xl  space-y-8   rounded-md bg-[#001534] px-8 py-4 print:space-y-4">
+      <section className="mx-auto mt-8 w-full max-w-3xl  space-y-8   rounded-md bg-[#001534] px-8 py-4 print:space-y-4">
         <HomeNav />
         <div className="flex items-center justify-between gap-2">
           <div className="flex-1 space-y-3.5">
@@ -98,12 +98,10 @@ export default function Page() {
             </div>
           </div>
 
-          <MySection duration={10000} className="" borderRadius="12px">
-            <Avatar className="size-28">
-              <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-              <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-            </Avatar>
-          </MySection>
+          <Avatar className="size-28">
+            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+          </Avatar>
         </div>
         <Section>
           <h2 className="text-xl font-bold">About</h2>

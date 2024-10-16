@@ -2,11 +2,13 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
+ 
+ 
 
 export function HomeNav() {
   return (
-    <section className="-py-4 -mx-8 w-full max-w-3xl  space-y-8  rounded-md   bg-[#001534] print:space-y-4">
-      <Navbar className="top-2 " />
+    <section className="-py-4 -mx-8 w-full max-w-3xl  space-y-8  rounded-md   bg-[#001534]  print:space-y-4">
+      <Navbar className="top-2   " />
     </section>
   );
 }

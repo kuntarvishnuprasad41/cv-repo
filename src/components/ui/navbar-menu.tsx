@@ -70,9 +70,24 @@ export const Menu = ({
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
+      className="relative flex justify-center space-x-4 rounded-full border border-transparent bg-white px-8 py-6 shadow-input dark:border-white/[0.2] dark:bg-black "
     >
       {children}
+      <div
+        style={{
+          content: '""',
+          position: "absolute",
+          top: "-1.5px",
+          left: "0px",
+          right: "0px",
+          bottom: "-1.5px",
+          borderRadius: "inherit",
+          background:
+            "radial-gradient(circle, var(--sky-500) 20%, var(--purple-500) 40%, var(--pink-500) 60%, transparent 80%)",
+          zIndex: "-1",
+          animation: "rotate 5s linear infinite", // Add animation here
+        }}
+      />
     </nav>
   );
 };
