@@ -5,18 +5,16 @@ import { cn } from "@/lib/utils";
 
 export function HomeNav() {
   return (
-    <div className="relative mb-6 flex w-screen content-end items-end justify-end   p-2">
-      <Navbar className="top-2  " />
-    </div>
+    <section className="-py-4 -mx-8 w-full max-w-3xl  space-y-8  rounded-md   bg-[#001534] print:space-y-4">
+      <Navbar className="top-2 " />
+    </section>
   );
 }
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn(" fixed inset-x-0 top-10 z-50 mx-auto max-w-md", className)}
-    >
+    <div className={cn(" fixed  top-10 z-50 mx-auto max-w-md", className)}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
