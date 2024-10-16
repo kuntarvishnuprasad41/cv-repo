@@ -6,9 +6,10 @@ export function middleware(req: NextRequest) {
 
   console.log("hn:", hostname, "\n url:", url);
 
-  if (hostname.startsWith("blog")) {
-    // Rewrite to the blogs section
-    url.pathname = `/blog${url.pathname}`;
+  const subdomain = hostname.split(".")[0];
+
+  if (subdomain !== "www") {
+    url.pathname = `/${subdomain}${url.pathname}`;
     return NextResponse.rewrite(url);
   }
 
