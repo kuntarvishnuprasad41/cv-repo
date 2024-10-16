@@ -8,7 +8,11 @@ export function middleware(req: NextRequest) {
   const hostLen = hostname.split(".").length;
  
 
-  if (subdomain !== "www" && hostLen > 2) {
+  if (
+    subdomain !== "www" &&
+    hostLen > 2 &&
+    hostname.split(".")[1] != "vercel"
+  ) {
     url.pathname = `/${subdomain}${url.pathname}`;
 
     return NextResponse.rewrite(url);
