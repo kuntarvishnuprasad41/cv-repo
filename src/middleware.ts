@@ -10,7 +10,7 @@ export function middleware(req: NextRequest) {
 
   if (subdomain !== "www" && hostLen > 2) {
     url.pathname = `/${subdomain}${url.pathname}`;
-    console.log("patj", url.pathname);
+    console.log("path", url.pathname);
 
     return NextResponse.rewrite(url);
   }
