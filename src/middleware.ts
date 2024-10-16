@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(req: NextRequest) {
+
   const url = req.nextUrl.clone();
   const hostname = req.headers.get("host") || "";
+
+  console.log("hn:", hostname, "\n url:", url);
+  
 
   if (hostname.startsWith("blog")) {
     // Rewrite to the blogs section
