@@ -8,7 +8,7 @@ export function middleware(req: NextRequest) {
   const hostLen = hostname.split(".").length;
   console.log("hn:", hostLen);
 
-  if (subdomain !== "www" && !hostLen) {
+  if (subdomain !== "www" && hostLen > 2) {
     url.pathname = `/${subdomain}${url.pathname}`;
     return NextResponse.rewrite(url);
   }
