@@ -10,6 +10,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { MySection } from "@/components/aceternity/moving-border";
 import { ExperienceCard } from "@/components/aceternity/experience";
+import { NavbarDemo } from "@/components/navbar/NabarDemo";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
+    <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
+      <NavbarDemo />
       <section className="mx-auto w-full max-w-3xl space-y-8  rounded-md   bg-[#001534] px-8 py-4 print:space-y-4">
         <div className="flex items-center justify-between gap-2">
           <div className="flex-1 space-y-3.5">
@@ -209,7 +211,7 @@ export default function Page() {
 
         <Section className="print-force-new-page scroll-mb-16">
           <h2 className="text-xl font-bold">Projects</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard
