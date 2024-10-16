@@ -29,19 +29,18 @@ export default function Page() {
               {RESUME_DATA.about}
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
-              {RESUME_DATA.location.map((loc) => {
+              {RESUME_DATA.location.map((loc, idx) => {
                 return (
-                  <>
-                    <a
-                      className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                      href={loc.locationLink}
-                      target="_blank"
-                    >
-                      <GlobeIcon className="size-3" />
-                      {loc.location}
-                    </a>{" "}
+                  <a
+                    className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                    href={loc.locationLink}
+                    target="_blank"
+                    key={idx}
+                  >
+                    <GlobeIcon className="size-3" />
+                    {loc.location}
                     <br />
-                  </>
+                  </a>
                 );
               })}
             </p>
