@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
 import { cn } from "@/lib/utils";
 
-export function NavbarDemo() {
+export function HomeNav() {
   return (
     <div className="relative mb-6 flex w-screen content-end items-end justify-end   p-2">
       <Navbar className="top-2  " />

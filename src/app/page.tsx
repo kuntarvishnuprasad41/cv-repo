@@ -10,7 +10,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { MySection } from "@/components/aceternity/moving-border";
 import { ExperienceCard } from "@/components/aceternity/experience";
-import { NavbarDemo } from "@/components/navbar/NabarDemo";
+import { HomeNav } from "@/components/navbar/NabarDemo";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <NavbarDemo />
+      <HomeNav />
       <section className="mx-auto w-full max-w-3xl space-y-8  rounded-md   bg-[#001534] px-8 py-4 print:space-y-4">
         <div className="flex items-center justify-between gap-2">
           <div className="flex-1 space-y-3.5">
