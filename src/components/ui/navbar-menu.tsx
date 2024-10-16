@@ -77,15 +77,14 @@ export const Menu = ({
         style={{
           content: '""',
           position: "absolute",
-          top: "-1.5px",
+          top: "-1.15px",
           left: "0px",
           right: "0px",
-          bottom: "-1.5px",
+          bottom: "-1.15px",
           borderRadius: "inherit",
           background:
             "radial-gradient(circle, var(--sky-500) 20%, var(--purple-500) 40%, var(--pink-500) 60%, transparent 80%)",
           zIndex: "-1",
-          animation: "rotate 5s linear infinite", // Add animation here
         }}
       />
     </nav>
