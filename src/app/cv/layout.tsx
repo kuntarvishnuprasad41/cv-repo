@@ -4,7 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import "./globals.css";
+import "../globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -30,7 +30,7 @@ export default function RootLayout({
         <title>Vishnu Prasad K | Full Stack Developer</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </head>
-      <body>
+      <body className="">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
