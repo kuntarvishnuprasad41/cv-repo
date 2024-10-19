@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <div className="mx-auto -mt-4 flex w-full  max-w-3xl justify-between space-y-8  rounded-md   px-8 py-4 print:space-y-4">
+      <div className="mx-auto mt-1 flex w-full  max-w-3xl justify-between space-y-8  rounded-md   px-8 py-4 print:space-y-4">
         <div className="flex-1 space-y-3.5">
           <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
           <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
@@ -90,7 +90,7 @@ export default function Page() {
           <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
         </Avatar>
       </div>
-      <section className="mx-auto mt-0 w-full max-w-3xl  space-y-3   rounded-md bg-[#001534] px-4 py-2 print:space-y-4">
+      <section className="mx-auto mt-8 w-full max-w-3xl  space-y-8   rounded-md bg-[#001534] px-8 py-4 print:space-y-4">
         {/* <HomeNav /> */}
 
         <Section>
@@ -104,7 +104,7 @@ export default function Page() {
           {RESUME_DATA.work.map((work) => {
             return (
               <ExperienceCard work={work} key={work.company}>
-                <Card className="bg-[#011028] px-3 py-2">
+                <Card className="bg-[#011028] p-8">
                   <CardHeader>
                     <div className="flex items-center justify-between  text-base">
                       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
@@ -130,7 +130,7 @@ export default function Page() {
                         {work.start} - {work.end ?? "Present"}
                       </div>
                     </div>
-                    <span className="flex  flex-row flex-wrap gap-1">
+                    <span className="flex  flex-row flex-wrap gap-2">
                       <br />
                     </span>
 
@@ -143,7 +143,7 @@ export default function Page() {
                   </CardContent>
 
                   <br />
-                  <span className="flex  flex-row flex-wrap gap-1">
+                  <span className="flex  flex-row flex-wrap gap-2">
                     {work.badges.map(
                       (badge, index) =>
                         index !== 0 && (
