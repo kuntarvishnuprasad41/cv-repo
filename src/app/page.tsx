@@ -20,88 +20,79 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto mt-8 w-full max-w-3xl  space-y-8   rounded-md bg-[#001534] px-8 py-4 print:space-y-4">
-        {/* <HomeNav /> */}
-        <div className="flex items-center justify-between gap-2">
-          <div className="flex-1 space-y-3.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
-              {RESUME_DATA.about}
-            </p>
-            <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
-              {RESUME_DATA.location.map((loc, idx) => {
-                return (
-                  <a
-                    className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                    href={loc.locationLink}
-                    target="_blank"
-                    key={idx}
-                  >
-                    <GlobeIcon className="size-3" />
-                    {loc.location}
-                    <br />
-                  </a>
-                );
-              })}
-            </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact.email ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
+      <div className="mx-auto -mt-4 flex w-full  max-w-3xl justify-between space-y-8  rounded-md   px-8 py-4 print:space-y-4">
+        <div className="flex-1 space-y-3.5">
+          <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
+          <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+            {RESUME_DATA.about}
+          </p>
+          <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+            {RESUME_DATA.location.map((loc, idx) => {
+              return (
+                <a
+                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  href={loc.locationLink}
+                  target="_blank"
+                  key={idx}
                 >
-                  <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <MailIcon className="size-4" />
-                  </a>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={`tel:${RESUME_DATA.contact.tel}`}>
-                    <PhoneIcon className="size-4" />
-                  </a>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.social.map((social) => (
-                <Button
-                  key={social.name}
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={social.url}>
-                    <social.icon className="size-4" />
-                  </a>
-                </Button>
-              ))}
-            </div>
-            <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
-              {RESUME_DATA.contact.email ? (
+                  <GlobeIcon className="size-3" />
+                  {loc.location}
+                  <br />
+                </a>
+              );
+            })}
+          </p>
+          <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+            {RESUME_DATA.contact.email ? (
+              <Button className="size-8" variant="outline" size="icon" asChild>
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                  <span className="underline">{RESUME_DATA.contact.email}</span>
+                  <MailIcon className="size-4" />
                 </a>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
+              </Button>
+            ) : null}
+            {RESUME_DATA.contact.tel ? (
+              <Button className="size-8" variant="outline" size="icon" asChild>
                 <a href={`tel:${RESUME_DATA.contact.tel}`}>
-                  <span className="underline">{RESUME_DATA.contact.tel}</span>
+                  <PhoneIcon className="size-4" />
                 </a>
-              ) : null}
-            </div>
+              </Button>
+            ) : null}
+            {RESUME_DATA.contact.social.map((social) => (
+              <Button
+                key={social.name}
+                className="size-8"
+                variant="outline"
+                size="icon"
+                asChild
+              >
+                <a href={social.url}>
+                  <social.icon className="size-4" />
+                </a>
+              </Button>
+            ))}
           </div>
-
-          <Avatar className="size-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
+          <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
+            {RESUME_DATA.contact.email ? (
+              <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                <span className="underline">{RESUME_DATA.contact.email}</span>
+              </a>
+            ) : null}
+            {RESUME_DATA.contact.tel ? (
+              <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                <span className="underline">{RESUME_DATA.contact.tel}</span>
+              </a>
+            ) : null}
+          </div>
         </div>
+
+        <Avatar className="size-28">
+          <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
+          <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+        </Avatar>
+      </div>
+      <section className="mx-auto mt-0 w-full max-w-3xl  space-y-3   rounded-md bg-[#001534] px-4 py-2 print:space-y-4">
+        {/* <HomeNav /> */}
+
         <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
@@ -113,7 +104,7 @@ export default function Page() {
           {RESUME_DATA.work.map((work) => {
             return (
               <ExperienceCard work={work} key={work.company}>
-                <Card className="bg-[#011028] p-8">
+                <Card className="bg-[#011028] px-3 py-2">
                   <CardHeader>
                     <div className="flex items-center justify-between  text-base">
                       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
@@ -139,7 +130,7 @@ export default function Page() {
                         {work.start} - {work.end ?? "Present"}
                       </div>
                     </div>
-                    <span className="flex  flex-row flex-wrap gap-2">
+                    <span className="flex  flex-row flex-wrap gap-1">
                       <br />
                     </span>
 
@@ -152,7 +143,7 @@ export default function Page() {
                   </CardContent>
 
                   <br />
-                  <span className="flex  flex-row flex-wrap gap-2">
+                  <span className="flex  flex-row flex-wrap gap-1">
                     {work.badges.map(
                       (badge, index) =>
                         index !== 0 && (
