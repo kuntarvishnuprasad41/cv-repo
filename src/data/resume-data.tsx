@@ -63,19 +63,19 @@ export const RESUME_DATA = {
   education: [
     {
       school: "Jain University",
-      degree: "Master Of Computer Applications",
+      degree: "Master Of Computer Applications (MCA)",
       start: "2022",
       end: "2024",
     },
     {
       school: "Bangalore University",
-      degree: "Bachelor Of Computer Applications",
+      degree: "Bachelor Of Computer Applications (BCA)",
       start: "2018",
       end: "2021",
     },
     {
       school: "DTE",
-      degree: "Diploma in Computer Science and Engineering",
+      degree: "Diploma in Computer Science and Engineering (Diploma in CSE)",
       start: "2013",
       end: "2016",
     },

@@ -168,7 +168,7 @@ export default function Page() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="font-semibold leading-none">
-                      {education.school}
+                      {education.degree}
                     </h3>
                     <div className="text-sm tabular-nums text-gray-500">
                       {education.start} - {education.end}
@@ -176,7 +176,7 @@ export default function Page() {
                   </div>
                 </CardHeader>
                 <CardContent className="mt-1 print:text-[12px]">
-                  {education.degree}
+                  {education.school}
                 </CardContent>
               </Card>
             );
