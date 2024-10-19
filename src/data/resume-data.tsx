@@ -75,7 +75,7 @@ export const RESUME_DATA = {
     },
     {
       school: "DTE",
-      degree: "Diploma in Computer Science and Engineering (Diploma in CSE)",
+      degree: "Diploma in Computer Science and Engineering  ",
       start: "2013",
       end: "2016",
     },
