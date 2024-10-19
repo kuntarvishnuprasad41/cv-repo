@@ -99,12 +99,12 @@ export default function Page() {
             {RESUME_DATA.summary}
           </p>
         </Section>
-        <Section>
+        <Section className="">
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
               <ExperienceCard work={work} key={work.company}>
-                <Card className="bg-[#011028] p-8">
+                <Card className="bg-[#011028] px-4 py-4">
                   <CardHeader>
                     <div className="flex items-center justify-between  text-base">
                       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
@@ -130,9 +130,7 @@ export default function Page() {
                         {work.start} - {work.end ?? "Present"}
                       </div>
                     </div>
-                    <span className="flex  flex-row flex-wrap gap-2">
-                      <br />
-                    </span>
+                    <span className="flex  flex-row flex-wrap gap-2"></span>
 
                     <h4 className="font-mono text-sm leading-none print:text-[12px]">
                       {work.title}
