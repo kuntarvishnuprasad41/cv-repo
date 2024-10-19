@@ -33,7 +33,7 @@ export function Experience({
   return (
     <Component
       className={cn(
-        "relative h-full w-full  overflow-hidden bg-transparent p-[1px] text-xl ",
+        "relative h-full w-full  overflow-hidden bg-transparent p-[1px] text-xl print:gap-0 print:p-0",
         containerClassName,
       )}
       style={{
@@ -48,12 +48,12 @@ export function Experience({
         <MovingBorder duration={duration} rx="100%" ry="100%">
           <div
             className={cn(
-              "h-[256px] w-[256px] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)] opacity-[0.8]",
+              "h-[256px] w-[256px] bg-[radial-gradient(var(--sky-500)_40%,transparent_60%)] opacity-[0.8] print:gap-0 print:p-0",
               borderClassName,
             )}
             style={{
               background:
-                "radial-gradient(circle, var(--sky-500) 20%, var(--purple-500) 40%, var(--pink-500) 60%, transparent 80%)",
+                " radial-gradient(circle, var(--sky-500) 20%, var(--purple-500) 40%, var(--pink-500) 60%, transparent 80%)",
             }}
           />
         </MovingBorder>
@@ -61,7 +61,7 @@ export function Experience({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl print:border-none",
+          "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl print:gap-0 print:border-none print:p-0",
           className,
         )}
         style={{
@@ -77,7 +77,11 @@ export function Experience({
 export const ExperienceCard = ({ children, work }: any) => {
   if (!work.end) {
     return (
-      <Experience duration={10000} borderRadius="10px">
+      <Experience
+        duration={10000}
+        borderRadius="10px"
+        className="print:gap-0 print:p-0"
+      >
         {children}
       </Experience>
     );
