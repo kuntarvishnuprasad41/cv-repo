@@ -139,7 +139,7 @@ function page() {
             sollicitudin nisl sed mauris suscipit, faucibus aliquet neque
             laoreet. Mauris
           </p>
-          <div className="flex flex-col gap-4 rounded-md bg-[#09132e] px-6 py-2">
+          <div className="flex flex-col gap-4 rounded-md bg-[#09132e] px-8 py-4">
             <h1>About Author</h1>
             <div className=" flex w-80 content-center items-center gap-2 rounded-md bg-[#101d47]  p-2">
               <Image
@@ -171,7 +171,6 @@ function page() {
               guide fellow developers, enthusiasts, and anyone passionate about
               technology.
             </p>
-            <br />
           </div>
         </div>
         <div className="mb-10  mt-5 flex flex-col gap-2">
