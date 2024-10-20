@@ -31,7 +31,12 @@ export default function RootLayout({
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </head>
       <body>
-        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          enableSystem
+          disableTransitionOnChange
+          defaultTheme="dark"
+        >
           {children}
           <GoogleAnalytics gaId="G-0ENBD8K0JC" />
         </ThemeProvider>
