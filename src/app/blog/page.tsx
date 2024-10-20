@@ -143,17 +143,23 @@ function page() {
                 quis aliquet nibh, rhoncus condimentum augue. Nullam ornare
                 ipsum ut tincidunt feugiat.
               </p>
+              <div className="mt-2 flex justify-end px-6 text-[12px] text-gray-400">
+                <p>08/12/1995 00:00 PM </p>
+              </div>
             </div>
           </div>
 
           <div className="flex w-full max-w-4xl gap-4 rounded-lg border border-gray-700 bg-black p-3">
             <div className="h-40 w-40 flex-shrink-0 rounded-md bg-blue-950"></div>
 
-            <div className="flex  flex-grow flex-col justify-between py-6">
+            <div className="flex  flex-grow flex-col justify-between py-6 pr-6">
               <div className="h-4 w-full bg-blue-950"></div>
               <div className="flex flex-col justify-between gap-1">
                 <div className="h-2 w-full bg-blue-950"></div>
                 <div className="h-2 w-full bg-blue-950"></div>
+                <div className="mt-2 flex justify-end px-0 text-[12px] text-gray-400">
+                  <div className="h-2 w-20 bg-blue-950"></div>
+                </div>
               </div>
             </div>
           </div>
