@@ -158,11 +158,11 @@ function page() {
               fast-paced, ever-evolving environment. I find startups
               particularly exciting due to the dynamic nature and the daily
               challenges that require constant learning and adaptability. Over
-              the years, I've developed a passion for solving complex problems
-              and experimenting with cutting-edge technologies to build robust,
-              scalable applications. Being a full-stack developer, I love the
-              full journey from conceptualizing ideas to turning them into
-              functioning digital products. I&apos;ve worked with a diverse
+              the years, I&apos;ve developed a passion for solving complex
+              problems and experimenting with cutting-edge technologies to build
+              robust, scalable applications. Being a full-stack developer, I
+              love the full journey from conceptualizing ideas to turning them
+              into functioning digital products. I&apos;ve worked with a diverse
               range of tech stacks, from building mobile applications using
               React Native and Kotlin to creating scalable back-end systems with
               Node.js and PostgreSQL. I firmly believe that a developer should
