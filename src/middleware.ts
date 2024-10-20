@@ -12,6 +12,11 @@ export function middleware(req: NextRequest) {
   const subdomain = hostname.split(".")[0];
   const hostLen = hostname.split(".").length;
 
+  console.log(hostname);
+  if (hostname === "blog.localhost:3000") {
+    url.pathname = `/blog${url.pathname}`;
+    return NextResponse.rewrite(url);
+  }
   if (
     subdomain !== "www" &&
     hostLen > 2 &&
