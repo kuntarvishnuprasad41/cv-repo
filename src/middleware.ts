@@ -7,14 +7,12 @@ export function middleware(req: NextRequest) {
   const subdomain = hostname.split(".")[0];
   const hostLen = hostname.split(".").length;
  
-  
+  console.log(hostname.split(".")[1]);
 
   if (
-    (subdomain !== "www" &&
-      subdomain == "localhost:3000" &&
-      hostLen > 2 &&
-      hostname.split(".")[1] != "vercel") ||
-    hostname.split(".")[1] == "localhost:3000"
+    subdomain !== "www" &&
+    hostLen > 2 &&
+    hostname.split(".")[1] != "vercel"
   ) {
     url.pathname = `/${subdomain}${url.pathname}`;
 
