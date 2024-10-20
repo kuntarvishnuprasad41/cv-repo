@@ -9,7 +9,7 @@ function page() {
           <div className=" py-1">Some Sort of marquee</div>
         </div>
         <div className="py-2">Blog sub</div>
-        <div className="mx-auto   h-full w-full max-w-3xl space-y-8  rounded-md   border border-gray-700 bg-[#001534] px-8 py-4 lg:max-w-4xl print:space-y-2">
+        <div className="mx-auto   h-full w-full max-w-3xl space-y-8  rounded-lg   border border-gray-700 bg-[#001534] px-8 py-4 lg:max-w-4xl print:space-y-2">
           <div className="mt-5 flex flex-col items-center justify-center  ">
             <Image
               src={
@@ -18,7 +18,7 @@ function page() {
               height={800}
               width={800}
               alt={""}
-              className=""
+              className="rounded-md"
               content="center"
             />
             <p className="mt-1 text-sm text-gray-400">Image description</p>
