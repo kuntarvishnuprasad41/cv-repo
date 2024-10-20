@@ -130,8 +130,8 @@ function page() {
         <div className="mb-10  mt-5 flex flex-col gap-2">
           <h1 className="mb-2 font-semibold">Suggested Reads</h1>
 
-          <div className="flex w-full max-w-4xl gap-4 rounded-lg border border-gray-700 bg-black p-3">
-            <div className="h-40 w-40 flex-shrink-0 rounded-md bg-blue-950"></div>
+          <div className="flex w-full max-w-4xl flex-col gap-4 rounded-lg border border-gray-700 bg-black p-3 px-6 lg:flex-row lg:px-3  ">
+            <div className="h-40 w-full flex-shrink-0 rounded-md bg-blue-950 lg:w-40"></div>
 
             <div className="flex  flex-grow flex-col justify-between py-6">
               <h1 className="text-lg font-semibold">
