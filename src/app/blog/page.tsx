@@ -153,23 +153,23 @@ function page() {
             </div>
 
             <p className="text-justify text-gray-300">
-              I’ve been immersed in the software development world for 7 years,
-              primarily targeting startups where I thrive in the fast-paced,
-              ever-evolving environment. I find startups particularly exciting
-              due to the dynamic nature and the daily challenges that require
-              constant learning and adaptability. Over the years, I've developed
-              a passion for solving complex problems and experimenting with
-              cutting-edge technologies to build robust, scalable applications.
-              Being a full-stack developer, I love the full journey from
-              conceptualizing ideas to turning them into functioning digital
-              products. I’ve worked with a diverse range of tech stacks, from
-              building mobile applications using React Native and Kotlin to
-              creating scalable back-end systems with Node.js and PostgreSQL. I
-              firmly believe that a developer should constantly adapt, learn new
-              skills, and evolve with the industry. I’m now sharing my
-              experiences and learnings through this blog, hoping to inspire and
-              guide fellow developers, enthusiasts, and anyone passionate about
-              technology.
+              I&apos;ve been immersed in the software development world for 7
+              years, primarily targeting startups where I thrive in the
+              fast-paced, ever-evolving environment. I find startups
+              particularly exciting due to the dynamic nature and the daily
+              challenges that require constant learning and adaptability. Over
+              the years, I've developed a passion for solving complex problems
+              and experimenting with cutting-edge technologies to build robust,
+              scalable applications. Being a full-stack developer, I love the
+              full journey from conceptualizing ideas to turning them into
+              functioning digital products. I&apos;ve worked with a diverse
+              range of tech stacks, from building mobile applications using
+              React Native and Kotlin to creating scalable back-end systems with
+              Node.js and PostgreSQL. I firmly believe that a developer should
+              constantly adapt, learn new skills, and evolve with the industry.
+              I&apos;m now sharing my experiences and learnings through this
+              blog, hoping to inspire and guide fellow developers, enthusiasts,
+              and anyone passionate about technology.
             </p>
           </div>
         </div>
