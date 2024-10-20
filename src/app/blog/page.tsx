@@ -27,6 +27,13 @@ function page() {
             Blog title , Should be little long like the title itself describes
             half the things
           </h1>
+          <div className="flex flex-col justify-center gap-2 rounded-md p-2 ">
+            <div>Author Section</div>
+            <div className=" flex w-80 content-center items-center gap-2 rounded-md bg-[#101d47]  p-2">
+              <div className="h-20 w-20 flex-shrink-0 rounded-full bg-blue-950"></div>
+              Vishnu Prasad Kuntar
+            </div>
+          </div>
           <p>Content here</p>
           <p className="text-justify text-gray-300">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis
