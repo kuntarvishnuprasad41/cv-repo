@@ -139,6 +139,20 @@ function page() {
             sollicitudin nisl sed mauris suscipit, faucibus aliquet neque
             laoreet. Mauris
           </p>
+          <h1>About Author</h1>
+          <div className=" flex w-80 content-center items-center gap-2 rounded-md bg-[#101d47]  p-2">
+            <Image
+              src="https://avatars.githubusercontent.com/u/19173030?v=4"
+              className="h-20 w-20 flex-shrink-0 rounded-full bg-blue-950"
+              width={80}
+              height={80}
+              alt="Vishnu Prasad Kuntar"
+            />
+            Vishnu Prasad Kuntar
+          </div>
+
+          <p></p>
+          <br />
         </div>
         <div className="mb-10  mt-5 flex flex-col gap-2">
           <h1 className="mb-2 font-semibold">Suggested Reads</h1>
