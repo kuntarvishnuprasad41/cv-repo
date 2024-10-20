@@ -127,7 +127,7 @@ function page() {
             laoreet. Mauris
           </p>
         </div>
-        <div className="mt-5  flex flex-col gap-2">
+        <div className="mb-10  mt-5 flex flex-col gap-2">
           <h1 className="mb-2 font-semibold">Suggested Reads</h1>
 
           <div className="flex w-full max-w-4xl gap-4 rounded-lg border border-gray-700 bg-black p-3">
@@ -146,17 +146,17 @@ function page() {
             </div>
           </div>
 
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
+          <div className="flex w-full max-w-4xl gap-4 rounded-lg border border-gray-700 bg-black p-3">
+            <div className="h-40 w-40 flex-shrink-0 rounded-md bg-blue-950"></div>
+
+            <div className="flex  flex-grow flex-col justify-between py-6">
+              <div className="h-4 w-full bg-blue-950"></div>
+              <div className="flex flex-col justify-between gap-1">
+                <div className="h-2 w-full bg-blue-950"></div>
+                <div className="h-2 w-full bg-blue-950"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
