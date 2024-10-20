@@ -139,20 +139,40 @@ function page() {
             sollicitudin nisl sed mauris suscipit, faucibus aliquet neque
             laoreet. Mauris
           </p>
-          <h1>About Author</h1>
-          <div className=" flex w-80 content-center items-center gap-2 rounded-md bg-[#101d47]  p-2">
-            <Image
-              src="https://avatars.githubusercontent.com/u/19173030?v=4"
-              className="h-20 w-20 flex-shrink-0 rounded-full bg-blue-950"
-              width={80}
-              height={80}
-              alt="Vishnu Prasad Kuntar"
-            />
-            Vishnu Prasad Kuntar
-          </div>
+          <div className="flex flex-col gap-4 rounded-md bg-[#09132e] px-6 py-2">
+            <h1>About Author</h1>
+            <div className=" flex w-80 content-center items-center gap-2 rounded-md bg-[#101d47]  p-2">
+              <Image
+                src="https://avatars.githubusercontent.com/u/19173030?v=4"
+                className="h-20 w-20 flex-shrink-0 rounded-full bg-blue-950"
+                width={80}
+                height={80}
+                alt="Vishnu Prasad Kuntar"
+              />
+              Vishnu Prasad Kuntar
+            </div>
 
-          <p></p>
-          <br />
+            <p className="text-justify text-gray-300">
+              I’ve been immersed in the software development world for 7 years,
+              primarily targeting startups where I thrive in the fast-paced,
+              ever-evolving environment. I find startups particularly exciting
+              due to the dynamic nature and the daily challenges that require
+              constant learning and adaptability. Over the years, I've developed
+              a passion for solving complex problems and experimenting with
+              cutting-edge technologies to build robust, scalable applications.
+              Being a full-stack developer, I love the full journey from
+              conceptualizing ideas to turning them into functioning digital
+              products. I’ve worked with a diverse range of tech stacks, from
+              building mobile applications using React Native and Kotlin to
+              creating scalable back-end systems with Node.js and PostgreSQL. I
+              firmly believe that a developer should constantly adapt, learn new
+              skills, and evolve with the industry. I’m now sharing my
+              experiences and learnings through this blog, hoping to inspire and
+              guide fellow developers, enthusiasts, and anyone passionate about
+              technology.
+            </p>
+            <br />
+          </div>
         </div>
         <div className="mb-10  mt-5 flex flex-col gap-2">
           <h1 className="mb-2 font-semibold">Suggested Reads</h1>
