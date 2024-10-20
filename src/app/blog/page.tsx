@@ -3,13 +3,13 @@ import React from "react";
 
 function page() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-4">
       <div className="flex flex-col content-center items-center justify-center overflow-hidden ">
         <div className="flex w-screen justify-center bg-slate-900">
-          <div className=" ">Some Sort of marquee</div>
+          <div className=" py-1">Some Sort of marquee</div>
         </div>
-        <div>Blog sub</div>
-        <div className="mx-auto   h-full w-full max-w-3xl space-y-8  rounded-md   bg-[#001534] px-8 py-4 lg:max-w-4xl print:space-y-2">
+        <div className="py-2">Blog sub</div>
+        <div className="mx-auto   h-full w-full max-w-3xl space-y-8  rounded-md   border border-gray-700 bg-[#001534] px-8 py-4 lg:max-w-4xl print:space-y-2">
           <div className="mt-5 flex flex-col items-center justify-center  ">
             <Image
               src={
@@ -129,7 +129,23 @@ function page() {
         </div>
         <div className="mt-5  flex flex-col gap-2">
           <h1 className="mb-2 font-semibold">Suggested Reads</h1>
-          <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
+
+          <div className="flex w-full max-w-4xl gap-4 rounded-lg border border-gray-700 bg-black p-3">
+            <div className="h-40 w-40 flex-shrink-0 rounded-md bg-blue-950"></div>
+
+            <div className="flex  flex-grow flex-col justify-between py-6">
+              <h1 className="text-lg font-semibold">
+                Blog title, Should be little long like the title itself
+                describes half the things
+              </h1>
+              <p className="mt-2 w-full text-[16px] text-gray-500">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                quis aliquet nibh, rhoncus condimentum augue. Nullam ornare
+                ipsum ut tincidunt feugiat.
+              </p>
+            </div>
+          </div>
+
           <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
           <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
           <div className="h-44 w-screen max-w-4xl rounded-md bg-blue-900"></div>
