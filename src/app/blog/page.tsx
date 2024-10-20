@@ -16,7 +16,7 @@ function page() {
                 "https://i1.pickpik.com/photos/484/344/909/dog-animal-preview.jpg"
               }
               height={800}
-              width={800}
+              width={900}
               alt={""}
               className="rounded-md"
               content="center"
