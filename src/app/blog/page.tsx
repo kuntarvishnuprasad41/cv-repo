@@ -3,7 +3,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="flex flex-col px-4">
+    <div className="flex flex-col  ">
       <div className="flex flex-col content-center items-center justify-center overflow-hidden ">
         <div className="flex w-screen justify-center bg-slate-900">
           <div className=" py-1">Some Sort of marquee</div>
