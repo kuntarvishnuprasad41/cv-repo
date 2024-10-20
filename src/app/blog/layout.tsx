@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-
+import "../globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <head>
-        <title>Blog | Vishnu Prasad Kuntar</title>
+        <title>Blog | Vishnu Prasad</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </head>
       <body>
