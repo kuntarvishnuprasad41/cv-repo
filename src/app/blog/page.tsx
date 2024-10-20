@@ -13,7 +13,7 @@ function page() {
           <div className="mt-5 flex flex-col items-center justify-center  ">
             <Image
               src={
-                "https://www.hindustantimes.com/ht-img/img/2023/08/25/1600x900/international_dog_day_1692974397743_1692974414085.jpg"
+                "https://i1.pickpik.com/photos/484/344/909/dog-animal-preview.jpg"
               }
               height={800}
               width={800}
