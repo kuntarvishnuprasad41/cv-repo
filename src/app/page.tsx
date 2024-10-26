@@ -213,6 +213,10 @@ export default function Page() {
             })}
           </div>
         </Section>
+        {/* <img
+          src="https://ghchart.rshah.org/kuntarvishnuprasad41"
+          alt="GitHub Activity Chart"
+        /> */}
       </section>
       <CommandMenu
         links={[
