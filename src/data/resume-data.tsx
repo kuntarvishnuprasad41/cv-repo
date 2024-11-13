@@ -161,6 +161,16 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "Kuntarschool.in | Website for AUPS KUNTAR",
+      techStack: ["Nextjs", "React", "PostgreSQL", "GraphQL"],
+      description: "Custom Website with SSR using Next.js",
+      logo: EvercastLogo,
+      link: {
+        label: "kuntarschool.in",
+        href: "https://kuntarschool.in/",
+      },
+    },
+    {
       title: "Buyology",
       techStack: [
         "Full Stack Developer",
