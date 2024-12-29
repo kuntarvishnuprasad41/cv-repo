@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <head>
         <title>Vishnu Prasad K | Full Stack Developer</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -34,8 +34,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
+          enableSystem={typeof window !== "undefined"}
         >
           {children}
           <GoogleAnalytics gaId="G-0ENBD8K0JC" />
