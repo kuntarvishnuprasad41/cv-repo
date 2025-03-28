@@ -1,8 +1,13 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect } from "react";
+import clarity from "@microsoft/clarity";
 
 const MicrosoftClarity = () => {
+  useEffect(() => {
+    clarity.init("qv5a8ou7e5");
+  }, []);
   return (
     <Script
       id="microsoft-clarity-init"
