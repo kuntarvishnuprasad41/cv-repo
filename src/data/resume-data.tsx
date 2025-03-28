@@ -171,6 +171,17 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "Proco & Leader",
+      techStack: ["Nexjs", "Headless wordpress", "GraphQL", "React"],
+      description:
+        "News portal for Proco & Leader with headless wordpress and Next.js",
+      logo: EvercastLogo,
+      link: {
+        label: "Proco & Leader",
+        href: "https://proco-leader.sscinitiatives.com/",
+      },
+    },
+    {
       title: "Buyology",
       techStack: [
         "Full Stack Developer",

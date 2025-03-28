@@ -7,6 +7,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
+import MicrosoftClarity from "./metrics/MSClarity";
 
 export const metadata: Metadata = {
   title: "Vishnu Prasad K | Full Stack Developer",
@@ -42,6 +43,7 @@ export default function RootLayout({
       </body>
       <Analytics />
       <SpeedInsights />
+      <MicrosoftClarity />
     </html>
   );
 }
