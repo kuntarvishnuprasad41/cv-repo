@@ -8,6 +8,7 @@ import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import MicrosoftClarity from "./metrics/MSClarity";
+import Clarity from "@microsoft/clarity";
 
 export const metadata: Metadata = {
   title: "Vishnu Prasad K | Full Stack Developer",
@@ -19,6 +20,8 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 });
+const projectId: any = process.env.NEXT_PUBLIC_MICROSOFT_CLARITY;
+Clarity.init(projectId);
 
 export default function RootLayout({
   children,
