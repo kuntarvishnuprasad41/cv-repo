@@ -1,70 +1,215 @@
 "use client";
-import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
+
+import * as React from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
 import { cn } from "@/lib/utils";
- 
- 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import {
+  NavigationItem,
+  NavigationSection,
+  navigationData,
+  standaloneLinks,
+} from "@/lib/navigation-data";
+import Image from "next/image";
 
 export function HomeNav() {
+  const [open, setOpen] = React.useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  const [fact, setFact] = React.useState<string>("Loading...");
+
+  React.useEffect(() => {
+    const fetchFact = async () => {
+      try {
+        const res = await fetch(
+          "https://pokeapi.co/api/v2/pokemon-species/pikachu/",
+        );
+        const data = await res.json();
+        const englishEntries = data.flavor_text_entries.filter(
+          (entry: any) => entry.language.name === "en",
+        );
+
+        if (englishEntries.length > 0) {
+          const randomEntry =
+            englishEntries[Math.floor(Math.random() * englishEntries.length)];
+          const cleanFact = randomEntry.flavor_text.replace(/\f/g, " ");
+          setFact(cleanFact);
+        } else {
+          setFact("No facts found for Pikachu.");
+        }
+      } catch (error) {
+        setFact("Failed to load fact.");
+        console.error(error);
+      }
+    };
+
+    fetchFact();
+  }, []);
+
   return (
-    <section className="-py-4 -mx-8 w-full max-w-3xl  space-y-8  rounded-md   bg-[#001534]  print:space-y-4">
-      <Navbar className="top-2   " />
-    </section>
+    <>
+      {isDesktop ? (
+        <NavigationMenu>
+          <NavigationMenuList>
+            {/* Render sections from navigation data */}
+            {navigationData.map((section) => (
+              <NavigationMenuItem key={section.title}>
+                <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  {section.title === "Thinkology" ? (
+                    <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                      <li className="row-span-3">
+                        <NavigationMenuLink asChild>
+                          <a
+                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            href="/"
+                          >
+                            <Image
+                              src={
+                                "https://avatars.githubusercontent.com/u/19173030?v=4"
+                              }
+                              width={100}
+                              height={100}
+                              alt="pikachu"
+                              className="rounded-full"
+                            />
+                            <div className="mb-2 mt-4 text-lg font-medium">
+                              Pikachu Facts [&nbsp;Click to Home&nbsp;]
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              <p>{fact}</p>
+                            </p>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      {section.items.map((item) => (
+                        <ListItem
+                          key={item.href}
+                          href={item.href}
+                          title={item.title}
+                        >
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {section.items.map((item) => (
+                        <ListItem
+                          key={item.href}
+                          href={item.href}
+                          title={item.title}
+                        >
+                          {item.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  )}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ))}
+
+            {/* Render standalone links */}
+            {standaloneLinks.map((link) => (
+              <NavigationMenuItem key={link.href}>
+                <Link href={link.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {link.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      ) : (
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-[300px] sm:w-[350px]">
+            <nav className="flex flex-col gap-4">
+              <Link
+                href="/"
+                className="flex items-center gap-2 font-semibold"
+                onClick={() => setOpen(false)}
+              >
+                <span className="text-lg">shadcn/ui</span>
+              </Link>
+
+              {/* Render mobile navigation from the same data */}
+              {navigationData.map((section) => (
+                <div key={section.title} className="flex flex-col space-y-3">
+                  <div className="font-medium">{section.title}</div>
+                  {section.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="pl-2 text-muted-foreground transition-colors hover:text-foreground"
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+
+              {/* Render standalone links */}
+              {standaloneLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-medium"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      )}
+    </>
   );
 }
 
-function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
   return (
-    <div
-      className={cn(" fixed top-10 z-50 mx-auto  mb-24 max-w-md  ", className)}
-    >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  grid grid-cols-2 gap-10 p-4 text-sm">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div>
-        </MenuItem>
-      </Menu>
-    </div>
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className,
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
   );
-}
+});
+ListItem.displayName = "ListItem";
