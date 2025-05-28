@@ -30,7 +30,7 @@ export const navigationData: NavigationSection[] = [
     ],
   },
   {
-    title: "Codes",
+    title: "Code Snippets",
     items: [
       {
         title: "Hooks",
@@ -40,7 +40,7 @@ export const navigationData: NavigationSection[] = [
       },
       {
         title: "Components",
-        href: "/posts/components",
+        href: "/posts/components1",
         description: "Reusable JSX, TSX components for your projects",
       },
       {
@@ -84,5 +84,7 @@ export const navigationData: NavigationSection[] = [
 ];
 
 export const standaloneLinks: NavigationItem[] = [
+  { title: "Blogs", href: "/blog" },
+
   { title: "Resume", href: "/resume" },
 ];

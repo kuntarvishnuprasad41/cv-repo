@@ -125,7 +125,7 @@ export function HomeNav() {
             {/* Render standalone links */}
             {standaloneLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href} legacyBehavior passHref>
+                <Link href={link.href}>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     {link.title}
                   </NavigationMenuLink>
@@ -149,7 +149,7 @@ export function HomeNav() {
                 className="flex items-center gap-2 font-semibold"
                 onClick={() => setOpen(false)}
               >
-                <span className="text-lg">shadcn/ui</span>
+                <span className="text-lg">Home</span>
               </Link>
 
               {/* Render mobile navigation from the same data */}
@@ -181,6 +181,10 @@ export function HomeNav() {
                 </Link>
               ))}
             </nav>
+            <br />
+            <p className="text-sm">
+              Did you know this about Pikachu? <br /> <p>{fact}</p>
+            </p>
           </SheetContent>
         </Sheet>
       )}
