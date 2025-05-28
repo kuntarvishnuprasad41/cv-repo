@@ -24,12 +24,7 @@ export const RESUME_DATA = {
   initials: "K",
   location: [
     {
-      location: "Bengaluru, Karnataka, India  ",
-      locationLink:
-        "https://www.google.com/maps/place/J.+P.+Nagar,+Bengaluru,+Karnataka+560078/@12.8896982,77.5780749,14z/data=!3m1!4b1!4m6!3m5!1s0x3bae150d7349a72b:0xf3d03ea1e1dd3d46!8m2!3d12.9063433!4d77.5856825!16zL20vMGg1bjJ4?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
-    },
-    {
-      location: "Kasaragod, Kerala,  India  ",
+      location: "Kuntar, Kasaragod, Kerala,  India  ",
       locationLink: "https://maps.app.goo.gl/2y8jugZ1W8oFsBqp8",
     },
   ],

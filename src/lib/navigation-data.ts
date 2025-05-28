@@ -12,65 +12,71 @@ export const navigationData: NavigationSection[] = [
     title: "Thinkology",
     items: [
       {
-        title: "Introduction",
-        href: "/docs",
+        title: "Homelab",
+        href: "/homelab",
         description:
-          "Re-usable components built using Radix UI and Tailwind CSS.",
+          "Discussion on pi-hole, Homeserver with NAS and home automation server set-up.",
       },
       {
-        title: "Installation",
-        href: "/docs/installation",
+        title: "Blogs",
+        href: "/posts",
         description: "How to install dependencies and structure your app.",
       },
       {
-        title: "Typography",
-        href: "/docs/primitives/typography",
-        description: "Styles for headings, paragraphs, lists...etc",
+        title: "Components",
+        href: "/posts/components",
+        description: "Ready to use JSX/TSX components for your app.",
       },
     ],
   },
   {
-    title: "Hooks",
+    title: "Codes",
     items: [
       {
-        title: "Alert Dialog",
-        href: "/docs/primitives/alert-dialog",
-        description:
-          "A modal dialog that interrupts the user with important content and expects a response.",
+        title: "Hooks",
+        href: "/posts/hooks",
+        description: "My favorite hooks",
       },
       {
-        title: "Hover Card",
+        title: "Configs",
         href: "/docs/primitives/hover-card",
         description:
-          "For sighted users to preview content available behind a link.",
+          "Configuration files for various tools and libraries used in the project.",
       },
       {
-        title: "Progress",
+        title: "Icons",
         href: "/docs/primitives/progress",
         description:
-          "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+          "A collection of icons used throughout the project, including SVGs and other formats.",
       },
       {
-        title: "Scroll-area",
+        title: "Loaders",
         href: "/docs/primitives/scroll-area",
-        description: "Visually or semantically separates content.",
+        description:
+          "A set of loading indicators and animations used to enhance user experience during data fetching or processing.",
       },
       {
-        title: "Tabs",
+        title: "Templates",
         href: "/docs/primitives/tabs",
         description:
-          "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+          "Predefined layouts and structures for common UI components, providing a consistent look and feel across the application.",
       },
       {
-        title: "Tooltip",
+        title: "Packages",
         href: "/docs/primitives/tooltip",
         description:
-          "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+          "A collection of reusable packages that can be integrated into various parts of the project, enhancing functionality and reducing development time.",
+      },
+      {
+        title: "Figma Designs",
+        href: "/docs/primitives/tooltip",
+        description:
+          "Figma designs and prototypes for the project, showcasing the visual and interactive elements of the user interface.",
       },
     ],
   },
 ];
 
 export const standaloneLinks: NavigationItem[] = [
-  { title: "Documentation", href: "/docs" },
+  { title: "Resume", href: "/resume" },
 ];
