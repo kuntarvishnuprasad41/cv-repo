@@ -24,12 +24,7 @@ export const RESUME_DATA = {
   initials: "K",
   location: [
     {
-      location: "Bengaluru, Karnataka, India  ",
-      locationLink:
-        "https://www.google.com/maps/place/J.+P.+Nagar,+Bengaluru,+Karnataka+560078/@12.8896982,77.5780749,14z/data=!3m1!4b1!4m6!3m5!1s0x3bae150d7349a72b:0xf3d03ea1e1dd3d46!8m2!3d12.9063433!4d77.5856825!16zL20vMGg1bjJ4?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D",
-    },
-    {
-      location: "Kasaragod, Kerala,  India  ",
+      location: "Kuntar, Kasaragod, Kerala,  India  ",
       locationLink: "https://maps.app.goo.gl/2y8jugZ1W8oFsBqp8",
     },
   ],
@@ -37,7 +32,10 @@ export const RESUME_DATA = {
     "Full stack developer who loves exploring technologies and thrives to solve challenges.",
   summary:
     "Developing Full Stack application since 2018 with various tech stack has taught me one thing, Learning and Adaptability is crucial part for a developer or any individual. I love to explore new things and bring best out of it.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/19173030?v=4",
+  // avatarUrl: "https://avatars.githubusercontent.com/u/19173030?v=4",
+  avatarUrl: "image.png",
+  // avatarUrl:
+  //   "https://media.licdn.com/dms/image/v2/D5603AQH1aLqMahIXtA/profile-displayphoto-shrink_800_800/B56ZWoKlioGoBk-/0/1742283102924?e=1753920000&v=beta&t=wIbzxPFZ2Luw8DNyYanHw2PDyeoeVlzSDNLvnmdSo5k",
   personalWebsiteUrl: "https://vishnuprasadkuntar.me",
   contact: {
     email: "kuntarvishnuprasad41@gmail.com",
@@ -53,11 +51,7 @@ export const RESUME_DATA = {
         url: "https://www.linkedin.com/in/vishnu-prasad-kuntar/",
         icon: LinkedInIcon,
       },
-      {
-        name: "X",
-        url: "https://x.com/kuvi41",
-        icon: XIcon,
-      },
+      { name: "X", url: "https://x.com/kuvi41", icon: XIcon },
     ],
   },
   education: [
@@ -165,10 +159,7 @@ export const RESUME_DATA = {
       techStack: ["Nextjs", "React", "PostgreSQL", "GraphQL"],
       description: "Custom Website with SSR using Next.js",
       logo: EvercastLogo,
-      link: {
-        label: "kuntarschool.in",
-        href: "https://kuntarschool.in/",
-      },
+      link: { label: "kuntarschool.in", href: "https://kuntarschool.in/" },
     },
     {
       title: "Proco & Leader",
@@ -194,10 +185,7 @@ export const RESUME_DATA = {
       ],
       description: "Refurbished E-commerce for greener world",
       logo: ParabolLogo,
-      link: {
-        label: "Buyology",
-        href: "https://buyology.online/",
-      },
+      link: { label: "Buyology", href: "https://buyology.online/" },
     },
     {
       title: "Safa Globaltech Pvt Ltd.",
@@ -215,10 +203,7 @@ export const RESUME_DATA = {
       description:
         "Website for the company with CMS, With custom themes and plugins",
       logo: EvercastLogo,
-      link: {
-        label: "Nayaks.biz",
-        href: "https://nayaks.biz/",
-      },
+      link: { label: "Nayaks.biz", href: "https://nayaks.biz/" },
     },
     {
       title: "Nayaks.Biz | Dealers Custom web app",
@@ -226,10 +211,7 @@ export const RESUME_DATA = {
       description:
         "Custom Web app to manage the clients and the slabs on the amount of purchases - B2B ",
       logo: EvercastLogo,
-      link: {
-        label: "Dealers Nayaks.biz",
-        href: "https://dealer.nayaks.biz/",
-      },
+      link: { label: "Dealers Nayaks.biz", href: "https://dealer.nayaks.biz/" },
     },
   ],
 } as const;

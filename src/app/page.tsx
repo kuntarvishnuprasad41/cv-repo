@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className=" container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-6">
-      <div className="mx-auto mt-1 flex w-full  max-w-3xl justify-between space-y-2  rounded-md   px-8 py-4 print:space-y-2">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-6">
+      <div className="mx-auto mt-1 flex w-full max-w-3xl justify-between space-y-2 rounded-md px-8 py-4 print:space-y-2">
         <div className="flex-1 space-y-3.5">
           <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
           <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
@@ -90,7 +90,7 @@ export default function Page() {
           <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
         </Avatar>
       </div>
-      <section className="mx-auto -mt-1 w-full max-w-3xl  space-y-8   rounded-md bg-[#001534] px-8 py-4 print:space-y-2">
+      <section className="mx-auto -mt-1 w-full max-w-3xl space-y-8 rounded-md bg-[#001534] px-8 py-4 print:space-y-2">
         {/* <HomeNav /> */}
 
         <Section>
@@ -104,16 +104,16 @@ export default function Page() {
           {RESUME_DATA.work.map((work) => {
             return (
               <ExperienceCard work={work} key={work.company}>
-                <Card className="bg-[#011028] px-4  py-4 print:gap-0 print:p-0 ">
+                <Card className="bg-[#011028] px-4 py-4 print:gap-0 print:p-0">
                   <CardHeader>
-                    <div className="flex items-center justify-between  text-base">
+                    <div className="flex items-center justify-between text-base">
                       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:gap-0">
-                        <a className="  hover:underline" href={work.link}>
+                        <a className="hover:underline" href={work.link}>
                           {work.company}
                         </a>
 
-                        <div className="ml-2 print:ml-0 ">
-                          <span className="flex  flex-row flex-wrap gap-2 print:gap-0">
+                        <div className="ml-2 print:ml-0">
+                          <span className="flex flex-row flex-wrap gap-2 print:gap-0">
                             <Badge
                               variant="secondary"
                               className="align-middle text-xs print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
@@ -130,7 +130,7 @@ export default function Page() {
                         {work.start} - {work.end ?? "Present"}
                       </div>
                     </div>
-                    <span className="flex  flex-row flex-wrap gap-2 print:gap-0"></span>
+                    <span className="flex flex-row flex-wrap gap-2 print:gap-0"></span>
 
                     <h4 className="font-mono text-sm leading-none print:text-[12px]">
                       {work.title}
@@ -141,7 +141,7 @@ export default function Page() {
                   </CardContent>
 
                   <br />
-                  <span className="flex  flex-row flex-wrap gap-2 print:gap-0">
+                  <span className="flex flex-row flex-wrap gap-2 print:gap-0">
                     {work.badges.map(
                       (badge, index) =>
                         index !== 0 && (
@@ -220,10 +220,7 @@ export default function Page() {
       </section>
       <CommandMenu
         links={[
-          {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
-          },
+          { url: RESUME_DATA.personalWebsiteUrl, title: "Personal Website" },
           ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
             url: socialMediaLink.url,
             title: socialMediaLink.name,
