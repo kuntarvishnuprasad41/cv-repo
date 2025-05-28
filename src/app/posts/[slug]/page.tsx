@@ -9,7 +9,7 @@ import {
 import { Section, Container, Article, Prose } from "@/components/craft";
 import { badgeVariants } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/site.config";
+import { siteConfig } from "../../../../site.config";
 
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
@@ -19,9 +19,7 @@ import type { Metadata } from "next";
 export async function generateStaticParams() {
   const posts = await getAllPosts();
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -97,7 +95,7 @@ export default async function Page({
               ></span>
             </Balancer>
           </h1>
-          <div className="flex justify-between items-center gap-4 text-sm mb-4">
+          <div className="mb-4 flex items-center justify-between gap-4 text-sm">
             <h5>
               Published {date} by{" "}
               {author.name && (
@@ -111,17 +109,17 @@ export default async function Page({
               href={`/posts/?category=${category.id}`}
               className={cn(
                 badgeVariants({ variant: "outline" }),
-                "!no-underline"
+                "!no-underline",
               )}
             >
               {category.name}
             </Link>
           </div>
           {featuredMedia?.source_url && (
-            <div className="h-96 my-12 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
+            <div className="my-12 flex h-96 items-center justify-center overflow-hidden rounded-lg border bg-accent/25 md:h-[500px]">
               {/* eslint-disable-next-line */}
               <img
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
                 src={featuredMedia.source_url}
                 alt={post.title.rendered}
               />
