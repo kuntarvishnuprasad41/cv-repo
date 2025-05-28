@@ -80,6 +80,28 @@ export const RESUME_DATA = {
       link: "https://sscinitiatives.com",
       badges: [
         "Remote",
+        "Jira",
+        "Agile",
+        "Scrum",
+        "React native",
+        "Next.js",
+        "Web Dev",
+        "Android dev",
+        "ios Development",
+      ],
+
+      title: "Project Manager cum Senior Software Developer",
+      logo: ConsultlyLogo,
+      start: "2025",
+      end: null,
+      description:
+        "Leading the front-end development and app development using technologies such as ",
+    },
+    {
+      company: "SSC Pvt Ltd.",
+      link: "https://sscinitiatives.com",
+      badges: [
+        "Remote",
 
         "React native",
         "Next.js",
@@ -97,7 +119,7 @@ export const RESUME_DATA = {
       title: "Senior Software Developer",
       logo: ConsultlyLogo,
       start: "2024",
-      end: null,
+      end: 2025,
       description:
         "Leading the front-end development and app development using technologies such as ",
     },

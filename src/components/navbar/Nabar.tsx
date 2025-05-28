@@ -125,7 +125,7 @@ export function HomeNav() {
             {/* Render standalone links */}
             {standaloneLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href}>
+                <Link href={link.href} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     {link.title}
                   </NavigationMenuLink>
