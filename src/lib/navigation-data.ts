@@ -23,7 +23,7 @@ export const navigationData: NavigationSection[] = [
         description: "How to install dependencies and structure your app.",
       },
       {
-        title: "Components",
+        title: "App ideas",
         href: "/posts/components",
         description: "Ready to use JSX/TSX components for your app.",
       },
@@ -35,7 +35,13 @@ export const navigationData: NavigationSection[] = [
       {
         title: "Hooks",
         href: "/posts/hooks",
-        description: "My favorite hooks",
+        description:
+          "Custom React hooks for managing state and side effects in your application.",
+      },
+      {
+        title: "Components",
+        href: "/posts/components",
+        description: "Reusable JSX, TSX components for your projects",
       },
       {
         title: "Configs",
