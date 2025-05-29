@@ -103,7 +103,7 @@ export default function Page() {
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
-              <ExperienceCard work={work} key={work.company}>
+              <ExperienceCard work={work} key={work.company + work.title}>
                 <Card className="bg-[#011028] px-4 py-4 print:gap-0 print:p-0">
                   <CardHeader>
                     <div className="flex items-center justify-between text-base">
