@@ -13,7 +13,7 @@ export const navigationData: NavigationSection[] = [
     items: [
       {
         title: "Homelab",
-        href: "/homelab",
+        href: "/posts/homelab",
         description:
           "Discussion on pi-hole, Homeserver with NAS and home automation server set-up.",
       },
