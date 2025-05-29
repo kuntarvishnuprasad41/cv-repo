@@ -5,7 +5,7 @@ type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  site_name: "vishnuprasad-cv",
+  site_name: "vishnu-prasad-kuntar-cv",
   site_description:
     "A personal portfolio and resume website for Vishnuprasad Kuntar and Blog Posts",
   site_domain: "https://vishnuprasadkuntar.me",
