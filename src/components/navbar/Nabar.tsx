@@ -123,11 +123,13 @@ export function HomeNav() {
             ))}
 
             {/* Render standalone links */}
-            {standaloneLinks.map((link) => (
-              <NavigationMenuItem key={link.href}>
-                <Link href={link.href}>{link.title}</Link>
-              </NavigationMenuItem>
-            ))}
+            <div className="flex gap-6 pl-2">
+              {standaloneLinks.map((link) => (
+                <NavigationMenuItem key={link.href}>
+                  <Link href={link.href}>{link.title}</Link>
+                </NavigationMenuItem>
+              ))}
+            </div>
           </NavigationMenuList>
         </NavigationMenu>
       ) : (
