@@ -23,6 +23,7 @@ import { FilterPosts } from "@/components/posts/filter";
 import { SearchInput } from "@/components/posts/search-input";
 
 import type { Metadata } from "next";
+import Adsense from "../metrics/Adsense";
 
 export const metadata: Metadata = {
   title: "Blog Posts",
@@ -60,7 +61,7 @@ export default async function Page({
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const paginatedPosts = posts.slice(
     (page - 1) * postsPerPage,
-    page * postsPerPage
+    page * postsPerPage,
   );
 
   // Create pagination URL helper
@@ -100,13 +101,13 @@ export default async function Page({
           </div>
 
           {paginatedPosts.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid gap-4 md:grid-cols-3">
               {paginatedPosts.map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
           ) : (
-            <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
+            <div className="flex h-24 w-full items-center justify-center rounded-lg border bg-accent/25">
               <p>No posts found</p>
             </div>
           )}
