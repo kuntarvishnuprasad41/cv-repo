@@ -101,7 +101,7 @@ export async function getPostById(id: number): Promise<Post> {
 export async function getPostBySlug(slug: string): Promise<Post> {
   const url = getUrl("/wp-json/wp/v2/posts", { slug });
   const response = await wordpressFetch<Post[]>(url);
-  console.log(`Generating metadata for post: ${response}`);
+
   return response[0];
 }
 
