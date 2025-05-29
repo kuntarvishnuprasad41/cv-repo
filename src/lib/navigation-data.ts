@@ -24,7 +24,7 @@ export const navigationData: NavigationSection[] = [
       },
       {
         title: "App ideas",
-        href: "/posts/components",
+        href: "/posts/app-ideas",
         description: "Ready to use JSX/TSX components for your app.",
       },
     ],
@@ -40,51 +40,44 @@ export const navigationData: NavigationSection[] = [
       },
       {
         title: "Components",
-        href: "/posts/components1",
+        href: "/posts/components",
         description: "Reusable JSX, TSX components for your projects",
       },
       {
         title: "Configs",
-        href: "/docs/primitives/hover-card",
+        href: "/posts/configs",
         description:
           "Configuration files for various tools and libraries used in the project.",
       },
       {
         title: "Icons",
-        href: "/docs/primitives/progress",
+        href: "/posts/icons",
         description:
           "A collection of icons used throughout the project, including SVGs and other formats.",
       },
       {
         title: "Loaders",
-        href: "/docs/primitives/scroll-area",
+        href: "/posts/loaders",
         description:
           "A set of loading indicators and animations used to enhance user experience during data fetching or processing.",
       },
       {
         title: "Templates",
-        href: "/docs/primitives/tabs",
+        href: "/posts/templates",
         description:
           "Predefined layouts and structures for common UI components, providing a consistent look and feel across the application.",
       },
       {
         title: "Packages",
-        href: "/docs/primitives/tooltip",
+        href: "/posts/packages",
         description:
           "A collection of reusable packages that can be integrated into various parts of the project, enhancing functionality and reducing development time.",
-      },
-      {
-        title: "Figma Designs",
-        href: "/docs/primitives/tooltip",
-        description:
-          "Figma designs and prototypes for the project, showcasing the visual and interactive elements of the user interface.",
       },
     ],
   },
 ];
 
 export const standaloneLinks: NavigationItem[] = [
-  { title: "Blog", href: "/blog" },
-
+  { title: "Blog", href: "/posts" },
   { title: "Resume", href: "/resume" },
 ];
