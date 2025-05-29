@@ -103,13 +103,13 @@ export default function Page() {
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
             return (
-              <ExperienceCard work={work} key={work.company}>
+              <ExperienceCard work={work} key={work.company + work.title}>
                 <Card className="bg-[#011028] px-4 py-4 print:gap-0 print:p-0">
                   <CardHeader>
                     <div className="flex items-center justify-between text-base">
                       <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:gap-0">
                         <a className="hover:underline" href={work.link}>
-                          {work.company}
+                          {work.title} @ {work.company}
                         </a>
 
                         <div className="ml-2 print:ml-0">
@@ -132,9 +132,9 @@ export default function Page() {
                     </div>
                     <span className="flex flex-row flex-wrap gap-2 print:gap-0"></span>
 
-                    <h4 className="font-mono text-sm leading-none print:text-[12px]">
+                    {/* <h4 className="font-mono text-sm leading-none print:text-[12px]">
                       {work.title}
-                    </h4>
+                    </h4> */}
                   </CardHeader>
                   <CardContent className="mt-2 text-xs print:text-[10px]">
                     {work.description}

@@ -90,7 +90,7 @@ export function HomeNav() {
                               Pikachu Facts [&nbsp;Click to Home&nbsp;]
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
-                              <p>{fact}</p>
+                              {fact}
                             </p>
                           </a>
                         </NavigationMenuLink>
@@ -125,11 +125,7 @@ export function HomeNav() {
             {/* Render standalone links */}
             {standaloneLinks.map((link) => (
               <NavigationMenuItem key={link.href}>
-                <Link href={link.href}>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    {link.title}
-                  </NavigationMenuLink>
-                </Link>
+                <Link href={link.href}>{link.title}</Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
@@ -183,7 +179,7 @@ export function HomeNav() {
             </nav>
             <br />
             <p className="text-sm">
-              Did you know this about Pikachu? <br /> <p>{fact}</p>
+              Did you know this about Pikachu? <br /> {fact}
             </p>
           </SheetContent>
         </Sheet>

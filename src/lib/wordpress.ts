@@ -24,7 +24,11 @@ function getUrl(path: string, query?: Record<string, any>) {
 }
 
 class WordPressAPIError extends Error {
-  constructor(message: string, public status: number, public endpoint: string) {
+  constructor(
+    message: string,
+    public status: number,
+    public endpoint: string,
+  ) {
     super(message);
     this.name = "WordPressAPIError";
   }
@@ -43,7 +47,7 @@ async function wordpressFetch<T>(url: string): Promise<T> {
     throw new WordPressAPIError(
       `WordPress API request failed: ${response.statusText}`,
       response.status,
-      url
+      url,
     );
   }
 
@@ -97,6 +101,7 @@ export async function getPostById(id: number): Promise<Post> {
 export async function getPostBySlug(slug: string): Promise<Post> {
   const url = getUrl("/wp-json/wp/v2/posts", { slug });
   const response = await wordpressFetch<Post[]>(url);
+  console.log(`Generating metadata for post: ${response}`);
   return response[0];
 }
 
@@ -185,7 +190,7 @@ export async function getPostsByAuthor(authorId: number): Promise<Post[]> {
 }
 
 export async function getPostsByAuthorSlug(
-  authorSlug: string
+  authorSlug: string,
 ): Promise<Post[]> {
   const author = await getAuthorBySlug(authorSlug);
   const url = getUrl("/wp-json/wp/v2/posts", { author: author.id });
@@ -193,7 +198,7 @@ export async function getPostsByAuthorSlug(
 }
 
 export async function getPostsByCategorySlug(
-  categorySlug: string
+  categorySlug: string,
 ): Promise<Post[]> {
   const category = await getCategoryBySlug(categorySlug);
   const url = getUrl("/wp-json/wp/v2/posts", { categories: category.id });
