@@ -38,7 +38,7 @@ async function wordpressFetch<T>(url: string): Promise<T> {
   const userAgent = "Next.js WordPress Client";
 
   const response = await fetch(url, {
-    next: { revalidate: 10 },
+    next: { revalidate: 600 },
     headers: {
       "User-Agent": userAgent,
     },
