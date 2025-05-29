@@ -83,7 +83,6 @@ export default async function Page({
     year: "numeric",
   });
   const category = await getCategoryById(post.categories[0]);
-  console.log("here");
 
   return (
     <Section>
