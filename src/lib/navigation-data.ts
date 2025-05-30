@@ -9,7 +9,7 @@ export type NavigationSection = { title: string; items: NavigationItem[] };
 
 export const navigationData: NavigationSection[] = [
   {
-    title: "Thinkology",
+    title: "Hello World!",
     items: [
       {
         title: "Homelab",
