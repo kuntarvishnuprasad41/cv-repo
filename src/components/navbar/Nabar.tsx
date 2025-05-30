@@ -69,12 +69,12 @@ export function HomeNav() {
               <NavigationMenuItem key={section.title}>
                 <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  {section.title === "Thinkology" ? (
-                    <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  {section.title === "Hello World!" ? (
+                    <ul className="grid gap-3 p-4 md:w-[500px] lg:w-[800px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            className="flex h-full w-full select-none flex-col items-center justify-end text-pretty rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                             href="/"
                           >
                             <Image
@@ -87,7 +87,7 @@ export function HomeNav() {
                               className="rounded-full"
                             />
                             <div className="mb-2 mt-4 text-lg font-medium">
-                              Pikachu Facts [&nbsp;Click to Home&nbsp;]
+                              Pikachu Facts <br /> [&nbsp;Click to Home&nbsp;]
                             </div>
                             <p className="text-sm leading-tight text-muted-foreground">
                               {fact}
@@ -123,7 +123,7 @@ export function HomeNav() {
             ))}
 
             {/* Render standalone links */}
-            <div className="flex gap-6 pl-2">
+            <div className="flex gap-9 pl-2">
               {standaloneLinks.map((link) => (
                 <NavigationMenuItem key={link.href}>
                   <Link href={link.href}>{link.title}</Link>
