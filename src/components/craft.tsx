@@ -4,6 +4,7 @@
 import React from "react";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import * as cheerio from "cheerio";
 
 // Utility function to merge class names
 export function cn(...inputs: ClassValue[]) {
@@ -230,25 +231,82 @@ export const Container = ({ children, className, id }: BaseProps) => (
   </div>
 );
 
+export function transformCodeBlocks(html: string): string {
+  const $ = cheerio.load(html);
+
+  $(".card").each((_, card) => {
+    const $card = $(card);
+
+    // Prevent duplication
+    if ($card.find(".header").length > 0) return;
+
+    // Find first code-title or fallback
+    const $originalTitle = $card.find(".code-title").first();
+    const title = $originalTitle.text().trim() || "code";
+
+    // Remove original title so it doesn't duplicate
+    $originalTitle.remove();
+
+    const header = `
+      <div class="header">
+        <p class="title code-title">code : ${title}</p>
+        <button class="copy" data-copy-button>
+          <svg class="w-[19px] h-[19px] text-gray-800 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M18 3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1V9a4 4 0 0 0-4-4h-3a1.99 1.99 0 0 0-1 .267V5a2 2 0 0 1 2-2h7Z" clip-rule="evenodd"></path>
+            <path fill-rule="evenodd" d="M8 7.054V11H4.2a2 2 0 0 1 .281-.432l2.46-2.87A2 2 0 0 1 8 7.054ZM10 7v4a2 2 0 0 1-2 2H4v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    `;
+
+    $card.prepend(header);
+  });
+
+  return $.html();
+}
+
 export const Article = ({
-  children,
   className,
   id,
   dangerouslySetInnerHTML,
-}: BaseProps & HTMLProps) => (
-  <article
-    dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-    className={cn(
-      articleTypographyStyles,
-      styles.layout.spacing,
-      styles.layout.article,
-      className
-    )}
-    id={id}
-  >
-    {children}
-  </article>
-);
+}: BaseProps & HTMLProps) => {
+  const enhancedHTML = dangerouslySetInnerHTML?.__html
+    ? transformCodeBlocks(dangerouslySetInnerHTML.__html)
+    : "";
+
+  return (
+    <article
+      dangerouslySetInnerHTML={{ __html: enhancedHTML }}
+      className={cn(
+        articleTypographyStyles,
+        styles.layout.spacing,
+        styles.layout.article,
+        className,
+      )}
+      id={id}
+    />
+  );
+};
+
+// export const Article = ({
+//   children,
+//   className,
+//   id,
+//   dangerouslySetInnerHTML,
+// }: BaseProps & HTMLProps) => (
+//   <article
+//     dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+//     className={cn(
+//       articleTypographyStyles,
+//       styles.layout.spacing,
+//       styles.layout.article,
+//       className,
+//     )}
+//     id={id}
+//   >
+//     {children}
+//   </article>
+// );
 
 export const Prose = ({
   children,
@@ -268,7 +326,7 @@ export const Prose = ({
 // Utility function for responsive classes
 const getResponsiveClass = <T extends string | number>(
   value: ResponsiveValue<T> | undefined,
-  classMap: Record<T, string>
+  classMap: Record<T, string>,
 ): string => {
   if (!value) return "";
   if (typeof value === "object") {
@@ -340,7 +398,7 @@ export const Box = ({
         getResponsiveClass(gap, gapClasses),
         cols && getResponsiveClass(cols, colsClasses),
         rows && getResponsiveClass(rows, colsClasses),
-        className
+        className,
       )}
       id={id}
     >

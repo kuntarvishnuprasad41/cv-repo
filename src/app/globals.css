@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 219 93% 5%; 
+    --background: 219 93% 5%;
     --foreground: 210 20% 98%;
 
     --card: 224 71.4% 4.1%;
@@ -68,38 +68,37 @@
   }
 }
 
- .light {
-    --background: 219 93% 5%; 
-    --foreground: 210 20% 98%;
+.light {
+  --background: 219 93% 5%;
+  --foreground: 210 20% 98%;
 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
+  --card: 224 71.4% 4.1%;
+  --card-foreground: 210 20% 98%;
 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
+  --popover: 224 71.4% 4.1%;
+  --popover-foreground: 210 20% 98%;
 
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+  --primary: 210 20% 98%;
+  --primary-foreground: 220.9 39.3% 11%;
 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
+  --secondary: 215 27.9% 16.9%;
+  --secondary-foreground: 210 20% 98%;
 
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+  --muted: 215 27.9% 16.9%;
+  --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
+  --accent: 215 27.9% 16.9%;
+  --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 20% 98%;
 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
+  --border: 215 27.9% 16.9%;
+  --input: 215 27.9% 16.9%;
+  --ring: 216 12.2% 83.9%;
 
-    --text-card-foreground: 120 10% 9%;
-  }
-
+  --text-card-foreground: 120 10% 9%;
+}
 
 @layer base {
   * {
@@ -114,8 +113,6 @@
   page-break-before: always;
 }
 
- 
-
 @keyframes marquee {
   0% {
     transform: translateX(100%);
@@ -127,4 +124,94 @@
 
 .animate-marquee {
   animation: marquee 10s linear infinite;
+}
+
+/* From Uiverse.io by Na3ar-17 */
+.container * {
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  width: 433px;
+  height: 130px;
+  background-color: #000;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: 40px 1fr;
+}
+
+.card .header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.card .header .title {
+  color: #7dd3fc;
+  font-size: 13px;
+  padding: 2px 12px;
+}
+
+.card .header .copy {
+  position: absolute;
+  background: transparent;
+  border: none;
+  top: 61%;
+  right: 1px;
+  transform: translate(-50%, -50%);
+  color: rgb(100, 116, 139);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.card .header .copy:hover {
+  color: rgb(148, 163, 184);
+}
+
+.card .header::before {
+  content: "";
+  position: absolute;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #64748b4d;
+  right: 1px;
+  bottom: 0;
+  background-color: #33415580;
+  width: 282px;
+  height: 33px;
+  z-index: 100;
+}
+
+.card .header::after {
+  content: "";
+  position: absolute;
+  width: 22%;
+  height: 1px;
+  background-color: #7dd3fc;
+  bottom: 0;
+}
+
+.card .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding-left: 10px;
+}
+
+.card .footer .code {
+  display: flex;
+  align-items: center;
+}
+
+.card .footer .code .icon {
+  color: rgb(244, 114, 182);
+  padding-top: 3px;
+}
+
+.card .footer .code .text {
+  padding-left: 3px;
+  color: #f8fafc;
 }

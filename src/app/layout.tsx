@@ -11,6 +11,7 @@ import MicrosoftClarity from "./metrics/MSClarity";
 import Clarity from "@microsoft/clarity";
 import { HomeNav } from "@/components/navbar/Nabar";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Vishnu Prasad K | Full Stack Developer",
@@ -46,6 +47,28 @@ export default function RootLayout({
           enableSystem={typeof window !== "undefined"}
         >
           {children}
+          <Script id="copy-handler" strategy="lazyOnload">
+            {`
+            document.addEventListener('click', function(e) {
+              const button = e.target.closest('[data-copy-button]');
+              if (!button) return;
+
+              const card = button.closest('.card');
+              if (!card) return;
+
+              const codeLines = card.querySelectorAll('.code .text');
+              const code = Array.from(codeLines).map(el => el.textContent.trim()).join('\\n');
+
+              navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = 'Copied!';
+                setTimeout(() => {
+                  button.innerHTML = originalText;
+                }, 2000);
+              });
+            });
+          `}
+          </Script>
           <GoogleAnalytics gaId="G-0ENBD8K0JC" />
         </ThemeProvider>
       </body>
