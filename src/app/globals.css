@@ -129,7 +129,8 @@
 /* From Uiverse.io by Na3ar-17 */
 
 .card {
-  width: 100%;
+  margin-left: -30px;
+  width: 580px;
   height: 100%;
   background-color: #000;
   border-radius: 10px;
@@ -139,7 +140,6 @@
 
 .card .header {
   display: flex;
-
   align-items: center;
   position: relative;
   padding-top: 15px;
@@ -212,4 +212,42 @@
 .card .footer .code .text {
   padding-left: 3px;
   color: #f8fafc;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin-left: 0; /* Remove negative margin */
+    width: 100%; /* Make it full width */
+    border-radius: 0; /* Optional: remove rounded corners for full-width */
+    height: auto; /* Let height adjust based on content */
+  }
+
+  .card .header::before {
+    width: 100%; /* Make header background span full width */
+  }
+
+  .card .header::after {
+    width: 50%; /* Adjust underline width */
+  }
+
+  .card .footer {
+    padding-left: 5px; /* Reduce padding */
+    gap: 3px;
+  }
+
+  .card .footer .code .text {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .card .header .title {
+    font-size: 12px; /* Slightly smaller title */
+    padding: 2px 6px;
+  }
+
+  .card .header .copy {
+    top: 50%; /* Adjust position for smaller header */
+    right: 5px;
+    transform: translate(0, -50%);
+    font-size: 14px; /* Make button icon/text easier to tap */
+  }
 }
