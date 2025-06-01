@@ -134,7 +134,7 @@
 
 .card {
   width: 433px;
-  height: 130px;
+  height: 100%;
   background-color: #000;
   border-radius: 10px;
   display: grid;
