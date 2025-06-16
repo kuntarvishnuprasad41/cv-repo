@@ -127,7 +127,12 @@ export default async function Page({
           )}
         </Prose>
 
-        <div className="flex w-[99%] justify-center">
+        {/* <div className="flex w-[99%] justify-center">
+          <Article
+            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+          />
+        </div> */}
+        <div className="w-full overflow-x-auto px-0 sm:px-0 md:flex md:justify-center">
           <Article
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
