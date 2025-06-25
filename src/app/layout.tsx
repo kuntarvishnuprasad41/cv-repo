@@ -47,6 +47,39 @@ export default function RootLayout({
           enableSystem={typeof window !== "undefined"}
         >
           {children}
+          <footer className="mt-16 border-t border-gray-700 px-4 py-6 text-sm text-gray-400">
+            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
+              <p>
+                &copy; {new Date().getFullYear()} Vishnu Prasad K. All rights
+                reserved.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="https://github.com/kuntarvishnuprasad41"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/vishnu-prasad-kuntar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="mailto:kuntarvishnuprasad41@gmail.com"
+                  className="hover:text-white"
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          </footer>
+
           <Script id="copy-handler" strategy="lazyOnload">
             {`
             document.addEventListener('click', function(e) {
