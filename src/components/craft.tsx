@@ -6,6 +6,14 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import * as cheerio from "cheerio";
 
+import { unified } from "unified";
+import rehypeParse from "rehype-parse";
+import rehypeRaw from "rehype-raw";
+import rehypePrism from "rehype-prism-plus";
+import rehypeReact from "rehype-react";
+import { CodeBlock } from "./codeblock";
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
+
 // Utility function to merge class names
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -265,28 +273,28 @@ export function transformCodeBlocks(html: string): string {
   return $.html();
 }
 
-export const Article = ({
-  className,
-  id,
-  dangerouslySetInnerHTML,
-}: BaseProps & HTMLProps) => {
-  const enhancedHTML = dangerouslySetInnerHTML?.__html
-    ? transformCodeBlocks(dangerouslySetInnerHTML.__html)
-    : "";
+// export const Article = ({
+//   className,
+//   id,
+//   dangerouslySetInnerHTML,
+// }: BaseProps & HTMLProps) => {
+//   const enhancedHTML = dangerouslySetInnerHTML?.__html
+//     ? transformCodeBlocks(dangerouslySetInnerHTML.__html)
+//     : "";
 
-  return (
-    <article
-      dangerouslySetInnerHTML={{ __html: enhancedHTML }}
-      className={cn(
-        articleTypographyStyles,
-        styles.layout.spacing,
-        styles.layout.article,
-        className,
-      )}
-      id={id}
-    />
-  );
-};
+//   return (
+//     <article
+//       dangerouslySetInnerHTML={{ __html: enhancedHTML }}
+//       className={cn(
+//         articleTypographyStyles,
+//         styles.layout.spacing,
+//         styles.layout.article,
+//         className,
+//       )}
+//       id={id}
+//     />
+//   );
+// };
 
 // export const Article = ({
 //   children,
@@ -307,6 +315,48 @@ export const Article = ({
 //     {children}
 //   </article>
 // );
+
+export const Article = ({
+  className,
+  id,
+  dangerouslySetInnerHTML,
+}: BaseProps & HTMLProps) => {
+  const html = dangerouslySetInnerHTML?.__html ?? "";
+
+  const processor = unified()
+    .use(rehypeParse, { fragment: true })
+    .use(rehypeRaw)
+    .use(rehypePrism)
+    .use(rehypeReact, {
+      jsx,
+      jsxs,
+      Fragment,
+      components: {
+        code: (props: any) => {
+          const lang = props.className?.replace("language-", "") ?? "text";
+          const code = props.children;
+
+          return <CodeBlock code={code} language={lang} />;
+        },
+      },
+    });
+
+  const Content = processor.processSync(html).result;
+
+  return (
+    <article
+      className={cn(
+        articleTypographyStyles,
+        styles.layout.spacing,
+        styles.layout.article,
+        className,
+      )}
+      id={id}
+    >
+      {Content}
+    </article>
+  );
+};
 
 export const Prose = ({
   children,
