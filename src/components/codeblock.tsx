@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Copy, Check } from "lucide-react";
 
 export const CodeBlock = ({
   code,
@@ -74,10 +75,10 @@ export const CodeBlock = ({
       </pre>
       <button
         onClick={handleCopy}
-        className="absolute right-2 top-2 rounded bg-gray-700 px-3 py-1 text-sm text-white opacity-30 transition-all duration-200 hover:bg-gray-600 focus:opacity-100 group-hover:opacity-100"
+        className="absolute right-2 top-2 rounded bg-gray-700 p-1 text-white opacity-30 transition-all duration-200 hover:bg-gray-600 focus:opacity-100 group-hover:opacity-100"
         type="button"
       >
-        {copied ? "Copied!" : "Copy"}
+        {copied ? <Check size={16} /> : <Copy size={16} />}
       </button>
     </div>
   );
