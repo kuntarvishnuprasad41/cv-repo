@@ -9,8 +9,8 @@ import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
 import MicrosoftClarity from "./metrics/MSClarity";
 import Clarity from "@microsoft/clarity";
-import { HomeNav } from "@/components/navbar/Nabar";
-import { NavigationMenu } from "@/components/ui/navigation-menu";
+// import { HomeNav } from "@/components/navbar/Nabar";
+// import { NavigationMenu } from "@/components/ui/navigation-menu";
 import Script from "next/script";
 
 export const metadata: Metadata = {
@@ -37,9 +37,9 @@ export default function RootLayout({
       <body>
         {/* <NavigationMenu /> */}
 
-        <div className="z-10000 mt-2 flex justify-end lg:-mb-10 lg:w-[80%] lg:justify-center">
-          <HomeNav />
-        </div>
+        {/* <div className="z-10000 mt-2 flex justify-end lg:-mb-10 lg:w-[80%] lg:justify-center"> */}
+          {/* <HomeNav /> */}
+        {/* </div> */}
         {/* </div> */}
         <ThemeProvider
           attribute="class"

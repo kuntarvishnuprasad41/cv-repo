@@ -10,7 +10,7 @@ import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { MySection } from "@/components/aceternity/moving-border";
 import { ExperienceCard } from "@/components/aceternity/experience";
-import { HomeNav } from "@/components/navbar/Nabar";
+// import { HomeNav } from "@/components/navbar/Nabar";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
