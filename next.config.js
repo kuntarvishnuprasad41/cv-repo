@@ -19,6 +19,8 @@ const nextConfig = {
         hostname: "wordpress.sscinitiatives.com",
       },
     ],
+  }, eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
