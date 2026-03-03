@@ -78,6 +78,6 @@ export const navigationData: NavigationSection[] = [
 ];
 
 export const standaloneLinks: NavigationItem[] = [
-  { title: "Blog", href: "/posts" },
+  // { title: "Blog", href: "/posts" },
   // { title: "Resume", href: "/resume" },
 ];

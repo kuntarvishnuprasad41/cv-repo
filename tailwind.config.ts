@@ -2,6 +2,12 @@ import type { Config } from "tailwindcss"
 import tailwindcssAnimate from "tailwindcss-animate"
 
 const config: Config = {
+     content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   
   theme: {
     extend: {
@@ -42,7 +48,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [require("tailwindcss-animate")],
 }
 
 export default config
