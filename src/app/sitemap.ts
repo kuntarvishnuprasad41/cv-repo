@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${siteConfig.site_domain}/posts`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: "daily",
       priority: 0.8,
     },
     {
@@ -33,13 +33,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: `${siteConfig.site_domain}/posts/categories`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 0.5,
     },
     {
       url: `${siteConfig.site_domain}/posts/tags`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "daily",
       priority: 0.5,
     },
   ];
@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const postUrls: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${siteConfig.site_domain}/posts/${post.slug}`,
     lastModified: new Date(post.modified),
-    changeFrequency: "weekly",
+    changeFrequency: "daily",
     priority: 0.5,
   }));
 
