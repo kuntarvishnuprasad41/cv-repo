@@ -130,8 +130,8 @@ export default async function Page({
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
         </div>
-      </Container>
-       <h5>
+
+        <h5>
               Published {date} by{" "}
               {author.name && (
                 <span>
@@ -139,6 +139,8 @@ export default async function Page({
                 </span>
               )}
             </h5>
+      </Container>
+       
     </Section>
   );
 }
