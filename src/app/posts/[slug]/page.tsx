@@ -96,14 +96,7 @@ export default async function Page({
             </Balancer>
           </h1>
           <div className="mb-4 flex items-center justify-between gap-4 text-sm">
-            <h5>
-              Published {date} by{" "}
-              {author.name && (
-                <span>
-                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{" "}
-                </span>
-              )}
-            </h5>
+           
 
             <Link
               href={`/posts/?category=${category.id}`}
@@ -138,6 +131,14 @@ export default async function Page({
           />
         </div>
       </Container>
+       <h5>
+              Published {date} by{" "}
+              {author.name && (
+                <span>
+                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{" "}
+                </span>
+              )}
+            </h5>
     </Section>
   );
 }
