@@ -95,9 +95,16 @@ export default async function Page({
               ></span>
             </Balancer>
           </h1>
-          <div className="mb-4 flex items-center justify-between gap-4 text-sm">
+          <div className="mb-4 flex items-center justify-between gap-4 text-sm max-w-[70%]">
            
-
+             <h5>
+              Published {date} by{" "}
+              {author.name && (
+                <span>
+                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{" "}
+                </span>
+              )}
+            </h5>
             <Link
               href={`/posts/?category=${category.id}`}
               className={cn(
@@ -131,14 +138,7 @@ export default async function Page({
           />
         </div>
 
-        <h5>
-              Published {date} by{" "}
-              {author.name && (
-                <span>
-                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{" "}
-                </span>
-              )}
-            </h5>
+       
       </Container>
        
     </Section>
