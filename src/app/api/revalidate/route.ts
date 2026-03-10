@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export const maxDuration = 30;
@@ -32,14 +32,50 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      console.log("Revalidating entire site");
+      console.log(
+        `Revalidating content: ${contentType}${
+          contentId ? ` (ID: ${contentId})` : ""
+        }`
+      );
+
+      // Revalidate specific content type tags
+      revalidateTag("wordpress", { expire: 0 });
+
+      if (contentType === "post") {
+        revalidateTag("posts", { expire: 0 });
+        if (contentId) {
+          revalidateTag(`post-${contentId}`, { expire: 0 });
+        }
+        // Clear all post pages when any post changes
+        revalidateTag("posts-page-1", { expire: 0 });
+      } else if (contentType === "category") {
+        revalidateTag("categories", { expire: 0 });
+        if (contentId) {
+          revalidateTag(`posts-category-${contentId}`, { expire: 0 });
+          revalidateTag(`category-${contentId}`, { expire: 0 });
+        }
+      } else if (contentType === "tag") {
+        revalidateTag("tags", { expire: 0 });
+        if (contentId) {
+          revalidateTag(`posts-tag-${contentId}`, { expire: 0 });
+          revalidateTag(`tag-${contentId}`, { expire: 0 });
+        }
+      } else if (contentType === "author" || contentType === "user") {
+        revalidateTag("authors", { expire: 0 });
+        if (contentId) {
+          revalidateTag(`posts-author-${contentId}`, { expire: 0 });
+          revalidateTag(`author-${contentId}`, { expire: 0 });
+        }
+      }
+
+      // Also revalidate the entire layout for safety
       revalidatePath("/", "layout");
 
       return NextResponse.json({
         revalidated: true,
-        message: `Revalidated entire site due to ${contentType} update${
+        message: `Revalidated ${contentType}${
           contentId ? ` (ID: ${contentId})` : ""
-        }`,
+        } and related content`,
         timestamp: new Date().toISOString(),
       });
     } catch (error) {
