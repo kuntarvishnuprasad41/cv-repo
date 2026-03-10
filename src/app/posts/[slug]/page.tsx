@@ -95,7 +95,7 @@ export default async function Page({
               ></span>
             </Balancer>
           </h1>
-          <div className="mb-4 flex items-center justify-between gap-4 text-sm max-w-[70%]">
+          <div className="mb-4 flex items-center justify-between gap-4 text-sm ">
            
              <h5>
               Published {date} by{" "}
