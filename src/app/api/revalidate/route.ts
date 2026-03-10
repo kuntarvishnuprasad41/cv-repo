@@ -22,14 +22,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { contentType, contentId } = requestBody;
-
-    if (!contentType) {
-      return NextResponse.json(
-        { message: "Missing content type" },
-        { status: 400 }
-      );
-    }
+   const contentType = requestBody.contentType || requestBody.type;
+  const contentId =
+    requestBody.contentId ||
+    requestBody.data?.id ||
+    requestBody.data?.term_id;
+  
+  if (!contentType) {
+    return NextResponse.json(
+      {
+        message: "Missing content type",
+        received: requestBody,
+      },
+      { status: 400 }
+    );
+}
 
     try {
       console.log(
