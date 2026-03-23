@@ -16,15 +16,16 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className="flex flex-col overflow-hidden border border-muted bg-[#011028] p-3">
-      <CardHeader className="">
-        <div className="space-y-1">
-          <CardTitle className="text-base">
+    <Card className="flex h-full flex-col overflow-hidden border border-white/5 bg-[#011028] p-4">
+      <CardHeader className="space-y-3">
+        <div className="space-y-2">
+          <CardTitle className="text-base leading-snug">
             {link ? (
               <a
                 href={link}
                 target="_blank"
-                className="inline-flex items-center gap-1 hover:underline"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 hover:underline"
               >
                 {title}{" "}
                 <span className="size-1 rounded-full bg-green-500"></span>
@@ -36,16 +37,16 @@ export function ProjectCard({ title, description, tags, link }: Props) {
           <div className="hidden font-mono text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <CardDescription className="font-mono text-xs print:text-[10px]">
+          <CardDescription className="text-sm leading-6 print:text-[10px]">
             {description}
           </CardDescription>
         </div>
       </CardHeader>
-      <CardContent className="mt-auto flex">
-        <div className="mt-2 flex flex-wrap gap-1">
+      <CardContent className="mt-auto flex pt-3">
+        <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
             <Badge
-              className="px-1 py-0 text-[10px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+              className="px-2 py-1 text-[11px] print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
               variant="secondary"
               key={tag}
             >

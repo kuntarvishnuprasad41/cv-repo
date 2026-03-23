@@ -8,7 +8,6 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
-import { MySection } from "@/components/aceternity/moving-border";
 import { ExperienceCard } from "@/components/aceternity/experience";
 // import { HomeNav } from "@/components/navbar/Nabar";
 
@@ -19,39 +18,41 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-6">
-      <div className="mx-auto mt-1 flex w-full max-w-3xl justify-between space-y-2 rounded-md px-8 py-4 print:space-y-2">
-        <div className="flex-1 space-y-3.5">
-          <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-          <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto px-4 py-6 sm:px-6 md:px-12 md:py-14 print:p-6">
+      <div className="mx-auto flex w-full max-w-3xl items-start justify-between gap-6 rounded-2xl px-6 py-6 md:px-8 md:py-7 print:space-y-2">
+        <div className="flex-1 space-y-4">
+          <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
+            {RESUME_DATA.name}
+          </h1>
+          <p className="max-w-xl text-pretty text-base leading-7 text-muted-foreground print:text-[12px]">
             {RESUME_DATA.about}
           </p>
-          <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
+          <div className="flex max-w-xl flex-wrap gap-x-4 gap-y-2 text-sm leading-6 text-muted-foreground">
             {RESUME_DATA.location.map((loc, idx) => {
               return (
                 <a
-                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  className="inline-flex items-center gap-x-1.5 hover:text-foreground hover:underline"
                   href={loc.locationLink}
                   target="_blank"
+                  rel="noreferrer"
                   key={idx}
                 >
                   <GlobeIcon className="size-3" />
                   {loc.location}
-                  <br />
                 </a>
               );
             })}
-          </p>
-          <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
+          </div>
+          <div className="flex flex-wrap gap-2 pt-1 text-sm text-muted-foreground print:hidden">
             {RESUME_DATA.contact.email ? (
-              <Button className="size-8" variant="outline" size="icon" asChild>
+              <Button className="size-9" variant="outline" size="icon" asChild>
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
                   <MailIcon className="size-4" />
                 </a>
               </Button>
             ) : null}
             {RESUME_DATA.contact.tel ? (
-              <Button className="size-8" variant="outline" size="icon" asChild>
+              <Button className="size-9" variant="outline" size="icon" asChild>
                 <a href={`tel:${RESUME_DATA.contact.tel}`}>
                   <PhoneIcon className="size-4" />
                 </a>
@@ -60,18 +61,18 @@ export default function Page() {
             {RESUME_DATA.contact.social.map((social) => (
               <Button
                 key={social.name}
-                className="size-8"
+                className="size-9"
                 variant="outline"
                 size="icon"
                 asChild
               >
-                <a href={social.url}>
+                <a href={social.url} rel="noreferrer" target="_blank">
                   <social.icon className="size-4" />
                 </a>
               </Button>
             ))}
           </div>
-          <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex print:text-[12px]">
+          <div className="hidden flex-col gap-y-1 text-sm text-muted-foreground print:flex print:text-[12px]">
             {RESUME_DATA.contact.email ? (
               <a href={`mailto:${RESUME_DATA.contact.email}`}>
                 <span className="underline">{RESUME_DATA.contact.email}</span>
@@ -90,116 +91,113 @@ export default function Page() {
           <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
         </Avatar>
       </div>
-      <section className="mx-auto -mt-1 w-full max-w-3xl space-y-8 rounded-md bg-[#001534] px-8 py-4 print:space-y-2">
+      <section className="mx-auto w-full max-w-3xl space-y-10 rounded-2xl bg-[#001534] px-6 py-6 md:px-8 md:py-8 print:space-y-2">
         {/* <HomeNav /> */}
 
-        <Section>
-          <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty font-mono text-sm text-muted-foreground print:text-[12px]">
+        <Section className="gap-y-4">
+          <h2 className="text-xl font-bold tracking-tight">About</h2>
+          <p className="max-w-none text-pretty text-sm leading-7 text-muted-foreground md:text-[15px] print:text-[12px]">
             {RESUME_DATA.summary}
           </p>
         </Section>
-        <Section className="">
-          <h2 className="text-xl font-bold">Work Experience</h2>
+        <Section className="gap-y-5">
+          <h2 className="text-xl font-bold tracking-tight">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
+            const [jobType, ...techStack] = work.badges;
+
             return (
               <ExperienceCard work={work} key={work.company + work.title}>
-                <Card className="bg-[#011028] px-4 py-4 print:gap-0 print:p-0">
-                  <CardHeader>
-                    <div className="flex items-center justify-between text-base">
-                      <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none print:gap-0">
-                        <a className="hover:underline" href={work.link}>
-                          {work.title} @ {work.company}
+                <Card className="border border-white/5 bg-[#011028] px-5 py-5 print:gap-0 print:p-0">
+                  <CardHeader className="space-y-4">
+                    <div className="flex flex-col gap-3 text-base sm:flex-row sm:items-start sm:justify-between">
+                      <div className="space-y-2">
+                        <h3 className="font-semibold leading-snug text-white print:gap-0">
+                          {work.title}
+                        </h3>
+                        <a
+                          className="block text-sm font-medium text-sky-300 transition-colors hover:text-sky-200 hover:underline"
+                          href={work.link}
+                        >
+                          {work.company}
                         </a>
-
-                        <div className="ml-2 print:ml-0">
-                          <span className="flex flex-row flex-wrap gap-2 print:gap-0">
-                            <Badge
-                              variant="secondary"
-                              className="align-middle text-xs print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
-                              key={work.badges[0]}
-                            >
-                              {work.badges[0]}
-                            </Badge>
-
-                            <br />
-                          </span>
-                        </div>
-                      </h3>
-                      <div className="text-sm tabular-nums text-gray-500">
+                      </div>
+                      <div className="shrink-0 text-sm tabular-nums text-gray-500">
                         {work.start} - {work.end ?? "Present"}
                       </div>
                     </div>
-                    <span className="flex flex-row flex-wrap gap-2 print:gap-0"></span>
-
-                    {/* <h4 className="font-mono text-sm leading-none print:text-[12px]">
-                      {work.title}
-                    </h4> */}
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge
+                        variant="secondary"
+                        className="rounded-md bg-sky-500/10 px-2.5 py-1 text-[11px] font-semibold text-sky-200 ring-1 ring-inset ring-sky-400/20 print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+                      >
+                        {jobType}
+                      </Badge>
+                    </div>
                   </CardHeader>
-                  <CardContent className="mt-2 text-xs print:text-[10px]">
+                  <CardContent className="text-sm leading-7 text-muted-foreground print:text-[10px]">
                     {work.description}
                   </CardContent>
-
-                  <br />
-                  <span className="flex flex-row flex-wrap gap-2 print:gap-0">
-                    {work.badges.map(
-                      (badge, index) =>
-                        index !== 0 && (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-xs print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
-                            key={badge}
-                          >
-                            {badge}
-                          </Badge>
-                        ),
-                    )}
-                  </span>
-                </Card>
+                  <div className="mt-4 space-y-2">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                      Tech Stack
+                    </p>
+                    <div className="flex flex-wrap gap-2 print:gap-0">
+                      {techStack.map((badge) => (
+                        <Badge
+                          variant="outline"
+                          className="rounded-sm border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] font-medium text-slate-200 shadow-sm print:px-1 print:py-0.5 print:text-[8px] print:leading-tight"
+                          key={badge}
+                        >
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  </Card>
               </ExperienceCard>
             );
           })}
         </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Education</h2>
+        <Section className="gap-y-5">
+          <h2 className="text-xl font-bold tracking-tight">Education</h2>
           {RESUME_DATA.education.map((education) => {
             return (
               <Card
                 key={education.school}
-                className="bg-[#011028] p-4 print:p-0"
+                className="border border-white/5 bg-[#011028] p-5 print:p-0"
               >
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-semibold leading-none">
+                <CardHeader className="space-y-3">
+                  <div className="flex flex-col gap-3 text-base sm:flex-row sm:items-start sm:justify-between">
+                    <h3 className="font-semibold leading-snug">
                       {education.degree}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="shrink-0 text-sm tabular-nums text-gray-500">
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-1 print:text-[12px]">
+                <CardContent className="text-sm leading-7 print:text-[12px]">
                   {education.school}
                 </CardContent>
               </Card>
             );
           })}
         </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
-          <div className="flex flex-wrap gap-1 px-4">
+        <Section className="gap-y-4">
+          <h2 className="text-xl font-bold tracking-tight">Skills</h2>
+          <div className="flex flex-wrap gap-2">
             {RESUME_DATA.skills.map((skill) => {
               return (
-                <Badge className="print:text-[10px]" key={skill}>
+                <Badge className="px-2.5 py-1 text-[11px] print:text-[10px]" key={skill}>
                   {skill}
                 </Badge>
               );
             })}
           </div>
         </Section>
-        <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-1 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
+        <Section className="scroll-mb-16 gap-y-5 print-force-new-page">
+          <h2 className="text-xl font-bold tracking-tight">Projects</h2>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
                 <ProjectCard
