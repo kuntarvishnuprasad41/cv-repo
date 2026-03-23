@@ -167,6 +167,13 @@ export const RESUME_DATA = {
 
   projects: [
     {
+      title: "Balaji Builds",
+      techStack: ["Next.js", "React", "i18n", "RTL/LTR"],
+      description:
+        "Building a modern Construction and Real Estate website.",
+      logo: EvercastLogo,
+      link: { label: "balajibuilds.com", href: "https://balajibuilds.com/" },
+    }, {
       title: "Riyash Furnitures (Abu Dhabi)",
       techStack: ["Next.js", "React", "i18n", "RTL/LTR"],
       description:
